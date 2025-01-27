@@ -4,40 +4,40 @@
             <img alt="" src="../assets/image/logo_uvs.png">
         </div>
         <div class="CI">
-            <button class="btn btn-success mr-1">Connexion</button>
+            <button class="btn btn-success mr-1"(click)="chooseConnection()" >Connexion</button>
             <button class="btn btn-success">inscription</button>
         </div>
     </header>  
     <body class="card-body">
         <section>
             <div>
-                <form action="">
+                <form #signupForm="ngForm" (ngSubmit)="form(signupForm)">
                     <div class="mb-3">
                         <label for="Name">Nom</label><br>
-                        <input type="text" class="form-control" placeholder="Nom">
+                        <input type="text" name="Name" class="form-control" placeholder="Nom" ngModel>
                     </div>
                     <div class="mb-3">
-                        <label for="Firt-Name">Prenom</label><br>
-                        <input type="text" class="form-control" placeholder="Prenom" >
+                        <label for="FirtName">Prenom</label><br>
+                        <input type="text" name="FirtName" class="form-control" placeholder="Prenom" ngModel>
                     </div>
                     <div class="mb-3">
                         <label for="Email">Email</label><br>
-                        <input type="Email" class="form-control" placeholder="Email">
+                        <input type="Email" name="Email" class="form-control" placeholder="Email" ngModel>
                     </div>
                     <div class="mb-3">
                         <label for="Password">Mot de passe</label><br>
-                        <input type="Password" class="form-control" placeholder="Mdp">
+                        <input type="Password" name="Password" class="form-control" placeholder="Mdp" ngModel>
                     </div>
                     <div class="mb-3">
                         <label for="C-Password">Confirmer mot de passe</label><br>
-                        <input type="Password" class="form-control" placeholder="Mdp">
+                        <input type="Password" name="ConfirmPassword" class="form-control" placeholder="Mdp" ngModel>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success form-control">S'incrire</button>
                     </div>      
                 </form>
             </div>
-            <div>
+            <div> 
                 <img src="../assets/image/logo_uvs.png" alt="">
             </div>
         </section>

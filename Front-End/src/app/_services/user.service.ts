@@ -16,7 +16,7 @@ RequestHeader=new HttpHeaders({
 
   public register(userData:{}){
     return this.httpclient.post(
-      this.PATH_OF_API + "/register", userData);
+      this.PATH_OF_API + "/registerNewUser", userData);
   }
 
   public connection(connectionData:{email:string; password: string}){

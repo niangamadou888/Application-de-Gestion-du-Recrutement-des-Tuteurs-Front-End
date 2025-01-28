@@ -27,8 +27,8 @@ export class ConnectionComponent {
         this.userAuthService.setRoles(Response.user.role);
         this.userAuthService.setToken(Response.jwtToken); 
         
-        const role = Response.user.role[0];
-        if(role === 'admin'){
+        const role = Response.user.role[0].roleName;
+        if(role === 'Admin'){
           this.router.navigate(['/adminDashbord']);
         } else {
           this.router.navigate(['/userDashbord']);

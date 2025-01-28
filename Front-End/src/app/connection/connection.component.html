@@ -14,11 +14,11 @@
                 <form #loginForm="ngForm" (ngSubmit)="connection(loginForm)" >
                     <div class="mb-3">
                         <label for="Email">Email</label><br>
-                        <input type="Email" name="Email" id="Email" class="form-control" placeholder="Email" ngModel>
+                        <input type="Email" name="userEmail" id="Email" class="form-control" placeholder="Email" ngModel>
                     </div>
                     <div class="mb-3">
                         <label for="Password">Mot de passe</label><br>
-                        <input type="Password" name="Password" id="Password" class="form-control" placeholder="Mdp" ngModel>
+                        <input type="Password" name="userPassword" id="Password" class="form-control" placeholder="Mdp" ngModel>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success form-control">Se Connecter</button>

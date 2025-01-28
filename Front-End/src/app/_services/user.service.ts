@@ -20,6 +20,14 @@ RequestHeader=new HttpHeaders({
   }
 
   public connection(connectionData:{email:string; password: string}){
+    
+    // Récupère le token JWT du localStorage (si déjà connecté)
+    const token = localStorage.getItem('jwtToken');
+
+    // Ajoute le token à l'en-tête 'Authorization' si il existe
+    if (token) {
+      this.RequestHeader = this.RequestHeader.set('Authorization', `Bearer ${token}`);
+    }
     return this.httpclient.post(
       this.PATH_OF_API + "/authenticate", connectionData,
       {headers: this.RequestHeader})

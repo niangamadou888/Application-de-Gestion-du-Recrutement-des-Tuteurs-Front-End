@@ -16,10 +16,17 @@ header img{
 }
 section{
     display: flex;
-    border: 1px solid chocolate;
-    margin: 20px 20px;
+    border: 3px solid chocolate;
+    border-radius: 20px;
+    margin: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     align-items: center;
     justify-content: space-between;
+    padding: 20px;
+    width:auto;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 form{
     margin-left: 10px;

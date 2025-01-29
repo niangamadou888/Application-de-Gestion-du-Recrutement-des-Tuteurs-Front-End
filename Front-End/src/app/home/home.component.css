@@ -18,30 +18,35 @@ header img{
 }
 section{
     display: flex;
-    margin: 50px 20px;
+    margin-left: 50px;
     align-items: center;
     justify-content: space-between;
-}p{
+}#p1{
     text-align: center;
+    margin-top:40px;
+    margin-bottom: 30px;
 }
 .Sec2{
     display: flex;
-    margin-left: 10px;
-    height: 300px;
-    width: 100px;
+    height: 100%;
+    width: 200px;
+    margin-left: 50px;
 }
 .IMG{
     height:100px;
-    width:140px ;
-    margin:10px;
+    width:150px ;
+    margin-left:80px;
     text-align: center;
     
 }#img{
     width: 30px;
     height: 30px;
-    margin: 20px;
+    margin: 10px;
 }a{
     text-decoration: none;
+}#img1{
+    margin: none;
+    width: 600px;
 }
 footer{
     background-color: gainsboro;

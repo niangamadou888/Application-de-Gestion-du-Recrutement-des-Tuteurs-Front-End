@@ -10,7 +10,10 @@ header img{
     width:30px ;
     margin-left: 10px;
 }
-.CI{
-	margin: 0px 20px;
-    height: auto;
+form{
+margin: 10% 30%;
+
+}
+body{
+    background-image: url('/assets/image/.png');
 }

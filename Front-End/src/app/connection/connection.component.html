@@ -4,13 +4,13 @@
         <div>
             <img alt="" src="../assets/image/logo_uvs.png">
         </div>
-        <div class="CI">
-            <button class="btn btn-success mr-1">Connexion</button>
-            <button class="btn btn-success"(click)="chooseInscription()" >inscription</button>
+        <div>
+            <button class="btn btn-success me-2">Connexion</button>
+            <button class="btn btn-success me-1"(click)="chooseInscription()" >inscription</button>
         </div>
     </header>  
     <body class="card-body">
-            <div>
+            <div class="sec">
                 <form #loginForm="ngForm" (ngSubmit)="connection(loginForm)" >
                     <div class="mb-3">
                         <label for="Email">Email</label><br>

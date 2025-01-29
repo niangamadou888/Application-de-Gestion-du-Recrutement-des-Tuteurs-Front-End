@@ -27,14 +27,16 @@ export class FormComponent {
         (response) => {
           console.log('Inscription réussie', response);
           alert('Inscription réussie !');
+          this.router.navigate(['/connection'])
         },
         (error) => {
-          console.error('Erreur lors de l\'inscription', error);
+          console.log('Erreur lors de l\'inscription', error);
           alert('Une erreur est survenue. Veuillez réessayer.');
         }
       );
+    }else{
+      alert('Veillez remplir tous les champs correctement')
     }
-    console.log('Formulaire soumis : ', signupForm.value);
   }
   
 }

@@ -11,21 +11,20 @@ header img{
     margin-left: 10px;
 }
 section{
-    background: rgba(255, 255, 255, 0.3); /* Transparence */
+    background: rgba(255, 255, 255, 0.497); /* Transparence */
     margin-left: 300px;
     margin-top: 50px;
     margin-bottom: 100px;
     width:800px;
     padding: 30px;
-    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-left: solid 10px  #cb6f29;
 }
 form{
-    margin: 5% 10%;  
+    margin: 5% 10%;
     }
 h2{
-    text-align: center; 
+    text-align: center;
     color: green;
 }#a{
     font-size: 20px;

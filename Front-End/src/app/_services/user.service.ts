@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-PATH_OF_API = "http://localhost:9090";
+PATH_OF_API = "https://application-de-gestion-du-recrutement.onrender.com";
 
 RequestHeader=new HttpHeaders({
     "No-Auth":"True"

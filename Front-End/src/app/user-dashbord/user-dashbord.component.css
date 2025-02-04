@@ -43,6 +43,7 @@ nav li {
 }
 
 .hero {
+  background-image: url('/assets/image/appele.png');
   background-size: cover;
   background-position: center;
   color: rgb(253, 251, 251);
@@ -50,7 +51,6 @@ nav li {
   text-align: left;
   padding: 150px 0;
   padding-left: 40px;
-  background-color: #ccc;
 }
 
 .annonces {

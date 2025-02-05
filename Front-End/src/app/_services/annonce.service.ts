@@ -14,7 +14,7 @@ export class AnnonceService {
 
   // Méthode pour Récupére la liste des annonces depuis l'API
   getAnnonces(): Observable<any[]> {
-    return this.http.get<any[]>('${this.apiURL}/api/annonces');
+    return this.http.get<any[]>(`${this.apiURL}/api/annonces`);
   }
 
 }

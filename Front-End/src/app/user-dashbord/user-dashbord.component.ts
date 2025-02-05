@@ -22,6 +22,7 @@ export class UserDashbordComponent {
     // Charger les annonces au démarrage du composant
     this.annonceService.getAnnonces().subscribe((data) => {
       this.annonces = data;
+      console.log(this.annonces);
       });
     }
 

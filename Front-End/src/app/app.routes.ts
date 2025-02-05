@@ -5,6 +5,7 @@ import { ConnectionComponent } from './connection/connection.component';
 import { HomeComponent } from './home/home.component';
 import { UserDashbordComponent } from './user-dashbord/user-dashbord.component';
 import { AdminDashbordComponent } from './admin-dashbord/admin-dashbord.component';
+import { FormCandidatureComponent } from './form-candidature/form-candidature.component';
 
 export const routes: Routes = [
     {path:'form', component:FormComponent},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     {path:'home', component:HomeComponent},
     {path:'userDashbord', component:UserDashbordComponent},
     {path:'adminDashbord', component: AdminDashbordComponent},
+    {path:'form-candidature', component: FormCandidatureComponent},
     { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

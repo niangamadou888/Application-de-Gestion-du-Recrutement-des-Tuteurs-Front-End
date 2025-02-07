@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { UserService } from '../_services/user.service';
+import { UserService } from '../../core/_services/user.service';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserAuthService } from '../_services/user-auth.service';
+import { UserAuthService } from '../../core/_services/user-auth.service';
 
 @Component({
   selector: 'app-connection',

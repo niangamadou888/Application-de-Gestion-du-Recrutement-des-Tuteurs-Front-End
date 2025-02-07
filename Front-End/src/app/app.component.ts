@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { FormComponent } from './form/form.component';
-import { ConnectionComponent } from './connection/connection.component';
+import { HomeComponent } from './candidat/home/home.component';
+import { FormComponent } from './candidat/form/form.component';
+import { ConnectionComponent } from './candidat/connection/connection.component';
 
 @Component({
   selector: 'app-root',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Route, Router } from '@angular/router';
-import { AnnonceService } from '../_services/annonce.service';
+import { AnnonceService } from '../../core/_services/annonce.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

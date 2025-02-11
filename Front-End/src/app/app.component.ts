@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { HomeComponent } from './candidat/home/home.component';
-import { FormComponent } from './candidat/form/form.component';
-import { ConnectionComponent } from './candidat/connection/connection.component';
+import { NavigationEnd, RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "./shared/header/header.component";
+import { SlidebarComponent } from './shared/slidebar/slidebar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent],
+  imports: [RouterOutlet, HeaderComponent, NavigationEnd, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

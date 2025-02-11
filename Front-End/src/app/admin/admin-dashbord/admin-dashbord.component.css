@@ -9,14 +9,3 @@
 div{
     margin-block: 10px;
 }
-footer{
-    text-align: center;
-    margin: auto;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-}
-footer p{
-    color: white;
-    
-}

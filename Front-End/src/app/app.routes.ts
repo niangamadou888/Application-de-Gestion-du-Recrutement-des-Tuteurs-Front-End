@@ -8,6 +8,7 @@ import { AdminDashbordComponent } from './admin/admin-dashbord/admin-dashbord.co
 import { FormCandidatureComponent } from './candidat/form-candidature/form-candidature.component';
 import { GestionAnnoncesComponent } from './admin/gestion-annonces/gestion-annonces.component';
 import { FormulaireAnnonceComponent } from './admin/formulaire-annonce/formulaire-annonce.component';
+import { CandidatureComponent } from './candidat/candidature/candidature.component';
 
 export const routes: Routes = [
     {path:'form', component:FormComponent},
@@ -18,5 +19,6 @@ export const routes: Routes = [
     {path:'form-candidature', component: FormCandidatureComponent},
     {path: 'gestion-annonces', component: GestionAnnoncesComponent },
     {path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
+    {path: 'candidature', component: CandidatureComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

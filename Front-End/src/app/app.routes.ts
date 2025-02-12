@@ -23,6 +23,7 @@ export const routes: Routes = [
     {path:'userDashbord', component:UserDashbordComponent},
     {path:'adminDashbord', component: AdminDashbordComponent},
     {path:'form-candidature', component: FormCandidatureComponent},
+<<<<<<< HEAD
     {path: 'gestion-annonces', component: GestionAnnoncesComponent},
     {path: 'formulaire-annonce', component: FormulaireAnnonceComponent},
     {path: 'ajout-annee', component: AjoutAnneeComponent },
@@ -31,8 +32,10 @@ export const routes: Routes = [
     {path: 'header', component: HeaderComponent},
     {path: 'slidebar', component: SlidebarComponent},
     {path: 'footer', component: FooterComponent},
+=======
     {path: 'gestion-annonces', component: GestionAnnoncesComponent },
     {path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
     {path: 'candidature', component: CandidatureComponent},
+>>>>>>> 5841d9b9c8be8ac1661a7b442f5fc985f140c149
     {path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

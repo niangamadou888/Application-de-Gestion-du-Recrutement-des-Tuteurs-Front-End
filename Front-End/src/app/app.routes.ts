@@ -1,6 +1,6 @@
 import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossiers.component';
 import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FormComponent } from './candidat/form/form.component';
 import { ConnectionComponent } from './candidat/connection/connection.component';
 import { HomeComponent } from './candidat/home/home.component';
@@ -23,7 +23,6 @@ export const routes: Routes = [
     {path:'userDashbord', component:UserDashbordComponent},
     {path:'adminDashbord', component: AdminDashbordComponent},
     {path:'form-candidature', component: FormCandidatureComponent},
-<<<<<<< HEAD
     {path: 'gestion-annonces', component: GestionAnnoncesComponent},
     {path: 'formulaire-annonce', component: FormulaireAnnonceComponent},
     {path: 'ajout-annee', component: AjoutAnneeComponent },
@@ -32,10 +31,8 @@ export const routes: Routes = [
     {path: 'header', component: HeaderComponent},
     {path: 'slidebar', component: SlidebarComponent},
     {path: 'footer', component: FooterComponent},
-=======
     {path: 'gestion-annonces', component: GestionAnnoncesComponent },
     {path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
     {path: 'candidature', component: CandidatureComponent},
->>>>>>> 5841d9b9c8be8ac1661a7b442f5fc985f140c149
     {path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

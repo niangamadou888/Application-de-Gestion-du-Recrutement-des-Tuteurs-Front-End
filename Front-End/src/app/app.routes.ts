@@ -14,6 +14,7 @@ import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats
 import { HeaderComponent } from './shared/header/header.component';
 import { SlidebarComponent} from './shared/slidebar/slidebar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { CandidatureComponent } from './candidat/candidature/candidature.component';
 
 export const routes: Routes = [
     {path:'form', component:FormComponent},
@@ -30,5 +31,8 @@ export const routes: Routes = [
     {path: 'header', component: HeaderComponent},
     {path: 'slidebar', component: SlidebarComponent},
     {path: 'footer', component: FooterComponent},
+    {path: 'gestion-annonces', component: GestionAnnoncesComponent },
+    {path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
+    {path: 'candidature', component: CandidatureComponent},
     {path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

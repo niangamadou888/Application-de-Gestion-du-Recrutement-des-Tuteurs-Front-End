@@ -46,7 +46,7 @@ nav li {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.181);
+  box-shadow: 0 2px 4px #cb6f29;
   width: 800px; /* Ajustez la largeur selon vos besoins */
   margin-left: 30%;
   margin-top: 100px;

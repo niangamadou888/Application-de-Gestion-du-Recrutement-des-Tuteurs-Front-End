@@ -29,4 +29,7 @@ export class UserDashbordComponent {
    choosePostuler(){
     this.router.navigate(['/form-candidature']);
   }
+   chooseCandidature(){
+    this.router.navigate(['/candidature'])
+   }
 }

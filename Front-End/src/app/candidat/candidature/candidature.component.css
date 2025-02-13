@@ -1,0 +1,119 @@
+*{
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.card-header{
+  background-color: #faf8f8;
+  border-bottom:solid 1px #010101;
+  top: 0;
+}
+.navbar{
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 20px;
+}
+a{
+  color: #010101;
+  margin: 0 30px;
+}
+header img{
+  height:30%;
+  width:30px ;
+  margin-left: 10px;
+}
+.card-header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  display: flex;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 40px;
+  text-decoration: none;
+}
+
+
+.annonces {
+  padding: 40px 0;
+}
+
+.annonces {
+  border: 1px solid #0188ff;
+  max-width: 100%;
+  width:70% ;
+  margin-bottom: 20px;
+  padding: 20px;
+  margin-left: 50px;
+  display: flex;
+  border-radius: 16px;
+}
+h1{
+  margin-left: 55px;
+  margin-top: 200px;
+
+}
+h5{
+  margin-left: 55px;
+  margin-bottom: 30px;
+}
+h3{
+  margin-top: 20px;
+}
+.annonces img{
+  height: 305px;
+  width: 305px;
+  border-radius: 17px;
+  margin-right: 20px;
+}
+.img1 img{
+  height: 32px;
+  width: 32px;
+}
+
+.annonces .container{
+  display: flex;
+}
+.annonces .container .bouton{
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+.bouton button{
+  background-color: red;
+  border-radius: 6px;
+  width: 100px;
+  color:#faf8f8;
+}
+.bouton1 button{
+  background-color: #0188ff;
+  border-radius: 6px;
+  width: 100px;
+  color:#faf8f8;
+}
+.annonces .container .bouton1{
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+.Postuler button{
+  align-items: center;
+  color: aliceblue;
+  border-color: #0188ff;
+  background-color: green;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 30%;
+  margin-top: 60px;
+  margin-bottom:100px ;
+  margin-left: 25%;
+  height: 30px;
+}

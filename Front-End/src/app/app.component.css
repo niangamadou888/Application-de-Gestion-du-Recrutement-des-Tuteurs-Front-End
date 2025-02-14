@@ -1,7 +1,7 @@
 main {
     flex: 1; /* Cela pousse le footer vers le bas */
     overflow-y: auto; /* Permet de défiler si le contenu est long */
-    padding-bottom: 150px;
+    
 }
 html, body {
     height: 100%;

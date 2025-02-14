@@ -8,6 +8,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 // Pages Public (accessible à tous)
 import { HomeComponent } from './public/home/home.component';
 import { ConnectionComponent } from './public/connection/connection.component';
+import { FormComponent } from './public/form/form.component';
 
 // Pages Candidat
 import { UserDashbordComponent } from './candidat/user-dashbord/user-dashbord.component';
@@ -21,7 +22,6 @@ import { FormulaireAnnonceComponent } from './admin/formulaire-annonce/formulair
 import { AjoutAnneeComponent } from './admin/ajout-annee/ajout-annee.component';
 import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossiers.component';
 import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats.component';
-import { FormComponent } from './candidat/form/form.component';
 
 export const routes: Routes = [
   // Layout Public
@@ -36,7 +36,7 @@ export const routes: Routes = [
   // Layout Candidat
   {
     path: 'candidat', component: CandidatLayoutComponent, children: [
-      { path: 'dashboard', component: UserDashbordComponent },
+      { path: 'user-dashboard', component: UserDashbordComponent },
       { path: 'form-candidature', component: FormCandidatureComponent },
       { path: 'candidature', component: CandidatureComponent }
     ]
@@ -45,7 +45,7 @@ export const routes: Routes = [
   // Layout Admin
   {
     path: 'admin', component: AdminLayoutComponent, children: [
-      { path: 'dashboard', component: AdminDashbordComponent },
+      { path: 'admin/admin-dashbord', component: AdminDashbordComponent },
       { path: 'gestion-annonces', component: GestionAnnoncesComponent },
       { path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
       { path: 'ajout-annee', component: AjoutAnneeComponent },

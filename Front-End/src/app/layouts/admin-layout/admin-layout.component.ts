@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-admin-layout',
+  standalone: true,  // Pape, c'est cette ligne qui manquait
   imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule],
   templateUrl: './admin-layout.component.html',
   styleUrl: './admin-layout.component.css'

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-candidat-layout',
+  standalone: true,  // Pape, c'est cette ligne qui manquait
   imports: [FooterComponent, RouterOutlet, CommonModule],
   templateUrl: './candidat-layout.component.html',
   styleUrl: './candidat-layout.component.css'

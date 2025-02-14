@@ -45,7 +45,7 @@ export const routes: Routes = [
   // Layout Admin
   {
     path: 'admin', component: AdminLayoutComponent, children: [
-      { path: 'admin/admin-dashbord', component: AdminDashbordComponent },
+      { path: 'admin-dashbord', component: AdminDashbordComponent },
       { path: 'gestion-annonces', component: GestionAnnoncesComponent },
       { path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
       { path: 'ajout-annee', component: AjoutAnneeComponent },

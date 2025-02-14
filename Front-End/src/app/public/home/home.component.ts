@@ -14,13 +14,13 @@ export class HomeComponent {
   chooseInscription() {
     
     // Rediriger vers la page d'inscription
-    this.router.navigate(['/form']);
+    this.router.navigate(['/inscription']);
   }
 
 
   chooseConnection() {
     
     // Rediriger vers la page de connexion
-    this.router.navigate(['/connection']);
+    this.router.navigate(['/connexion']);
   }
 }

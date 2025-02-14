@@ -1,38 +1,59 @@
-import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossiers.component';
-import { Component } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { FormComponent } from './candidat/form/form.component';
-import { ConnectionComponent } from './candidat/connection/connection.component';
-import { HomeComponent } from './candidat/home/home.component';
+import { Routes } from '@angular/router';
+
+// Layouts
+import { PublicLayoutComponent } from './layouts/public-layout/public-layout.component';
+import { CandidatLayoutComponent } from './layouts/candidat-layout/candidat-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+
+// Pages Public (accessible à tous)
+import { HomeComponent } from './public/home/home.component';
+import { ConnectionComponent } from './public/connection/connection.component';
+
+// Pages Candidat
 import { UserDashbordComponent } from './candidat/user-dashbord/user-dashbord.component';
-import { AdminDashbordComponent } from './admin/admin-dashbord/admin-dashbord.component';
 import { FormCandidatureComponent } from './candidat/form-candidature/form-candidature.component';
+import { CandidatureComponent } from './candidat/candidature/candidature.component';
+
+// Pages Admin
+import { AdminDashbordComponent } from './admin/admin-dashbord/admin-dashbord.component';
 import { GestionAnnoncesComponent } from './admin/gestion-annonces/gestion-annonces.component';
 import { FormulaireAnnonceComponent } from './admin/formulaire-annonce/formulaire-annonce.component';
 import { AjoutAnneeComponent } from './admin/ajout-annee/ajout-annee.component';
+import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossiers.component';
 import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SlidebarComponent} from './shared/slidebar/slidebar.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { CandidatureComponent } from './candidat/candidature/candidature.component';
+import { FormComponent } from './candidat/form/form.component';
 
 export const routes: Routes = [
-    {path:'form', component:FormComponent},
-    {path:'connection', component:ConnectionComponent},
-    {path:'home', component:HomeComponent},
-    {path:'userDashbord', component:UserDashbordComponent},
-    {path:'adminDashbord', component: AdminDashbordComponent},
-    {path:'form-candidature', component: FormCandidatureComponent},
-    {path: 'gestion-annonces', component: GestionAnnoncesComponent},
-    {path: 'formulaire-annonce', component: FormulaireAnnonceComponent},
-    {path: 'ajout-annee', component: AjoutAnneeComponent },
-    {path: 'gestion-dossiers', component: GestionDossiersComponent},
-    {path: 'liste-candidats', component: ListeCandidatsComponent},
-    {path: 'header', component: HeaderComponent},
-    {path: 'slidebar', component: SlidebarComponent},
-    {path: 'footer', component: FooterComponent},
-    {path: 'gestion-annonces', component: GestionAnnoncesComponent },
-    {path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
-    {path: 'candidature', component: CandidatureComponent},
-    {path: '', redirectTo: '/home', pathMatch: 'full' },
+  // Layout Public
+  {
+    path: '', component: PublicLayoutComponent, children: [
+      { path: '', component: HomeComponent },
+      { path: 'connexion', component: ConnectionComponent },
+      { path: 'inscription', component: FormComponent }
+    ]
+  },
+
+  // Layout Candidat
+  {
+    path: 'candidat', component: CandidatLayoutComponent, children: [
+      { path: 'dashboard', component: UserDashbordComponent },
+      { path: 'form-candidature', component: FormCandidatureComponent },
+      { path: 'candidature', component: CandidatureComponent }
+    ]
+  },
+
+  // Layout Admin
+  {
+    path: 'admin', component: AdminLayoutComponent, children: [
+      { path: 'dashboard', component: AdminDashbordComponent },
+      { path: 'gestion-annonces', component: GestionAnnoncesComponent },
+      { path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
+      { path: 'ajout-annee', component: AjoutAnneeComponent },
+      { path: 'gestion-dossiers', component: GestionDossiersComponent },
+      { path: 'liste-candidats', component: ListeCandidatsComponent }
+    ]
+  },
+
+  // Redirection si la route n'existe pas
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

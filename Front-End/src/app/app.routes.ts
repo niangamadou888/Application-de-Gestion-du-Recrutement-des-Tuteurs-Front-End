@@ -36,7 +36,7 @@ export const routes: Routes = [
   // Layout Candidat
   {
     path: 'candidat', component: CandidatLayoutComponent, children: [
-      { path: 'user-dashboard', component: UserDashbordComponent },
+      { path: 'userDashbord', component: UserDashbordComponent },
       { path: 'form-candidature', component: FormCandidatureComponent },
       { path: 'candidature', component: CandidatureComponent }
     ]

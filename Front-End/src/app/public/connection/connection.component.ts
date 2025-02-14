@@ -36,7 +36,7 @@ export class ConnectionComponent {
         if(role === 'Admin'){
           this.router.navigate(['/admin/admin-dashbord']);
         } else {
-          this.router.navigate(['/userDashbord']);
+          this.router.navigate(['/candidat/userDashbord']);
         }
       },
       (error)=>{

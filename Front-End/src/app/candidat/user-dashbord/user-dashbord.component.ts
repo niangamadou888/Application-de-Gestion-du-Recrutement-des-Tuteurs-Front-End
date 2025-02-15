@@ -16,8 +16,8 @@ export class UserDashbordComponent {
   constructor(
     private router:Router,
     private annonceService : AnnonceService ){}
-  
-  
+
+
   ngOnInit(): void {
     // Charger les annonces au démarrage du composant
     this.annonceService.getAnnonces().subscribe((data) => {
@@ -27,9 +27,9 @@ export class UserDashbordComponent {
     }
 
    choosePostuler(){
-    this.router.navigate(['/form-candidature']);
+    this.router.navigate(['/candidat/form-candidature']);
   }
    chooseCandidature(){
-    this.router.navigate(['/candidature'])
+    this.router.navigate(['/candidat/candidature'])
    }
 }

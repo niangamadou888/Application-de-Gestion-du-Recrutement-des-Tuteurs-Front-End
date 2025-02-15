@@ -50,17 +50,16 @@ nav li {
 form{
   max-width: 80%;
   margin: 150px 100px;
-  border-top: orangered solid 1px;
   border-left: orangered solid 2px;
   border-right: orangered solid 2px;
   border-bottom:  orangered solid 4px;
   border-radius: 6px;
-  height: 650px;
+  height: 600px;
 }
 .compte{
   max-width: 100%;
   width: 100%;
-  height: 500px;
+  height: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;

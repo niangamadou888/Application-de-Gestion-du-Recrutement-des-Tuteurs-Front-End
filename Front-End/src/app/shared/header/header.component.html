@@ -1,13 +1,14 @@
 <header>
-    <div>
-        <nav class="nav nav-pills nav-fill">
-        <a class="navbar-brand " href="#">
-            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
-        </a>
-        <a class="nav-link" [routerLink]="'/gestion-annonces'">Gérer les annonces</a>
-        <a class="nav-link" [routerLink]="'/liste-candidats'">Liste des candidats</a>
-        <a class="nav-link" [routerLink]="'/gestion-dossiers'">Gestion des dossiers</a>
-        <a class="nav-link " [routerLink]="'/ajout-annee'" tabindex="-1" > Gestion des Années Académiques</a>
+    <div class="container-fluid bg-light">
+        <nav class="nav nav-pills nav-fill navbar-light">
+            <a class="navbar-brand" routerLink="/">
+                <img src="../assets/image/logo_uvs.png" alt="">
+            </a>
+            <a class="nav-link" routerLink="/admin/gestion-annonces" routerLinkActive="active-title">Gérer les annonces</a>
+            <a class="nav-link" routerLink="/admin/liste-candidats" routerLinkActive="active-title">Liste des candidats</a>
+            <a class="nav-link" routerLink="/admin/gestion-dossiers" routerLinkActive="active-title">Gestion des dossiers</a>
+            <a class="nav-link" routerLink="/admin/ajout-annee" routerLinkActive="active-title">Gestion des Années Académiques</a>
+            <button class="btn btn-outline-success deconnexion" type="button" tabindex="-1">Déconnexion</button>
         </nav> 
     </div>
 </header>

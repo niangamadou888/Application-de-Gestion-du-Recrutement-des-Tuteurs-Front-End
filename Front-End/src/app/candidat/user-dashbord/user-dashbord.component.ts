@@ -32,4 +32,8 @@ export class UserDashbordComponent {
    chooseCandidature(){
     this.router.navigate(['/candidat/candidature'])
    }
+
+   chooseCompte(){
+    this.router.navigate(['/candidat/compte'])
+   }
 }

@@ -22,6 +22,7 @@ import { FormulaireAnnonceComponent } from './admin/formulaire-annonce/formulair
 import { AjoutAnneeComponent } from './admin/ajout-annee/ajout-annee.component';
 import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossiers.component';
 import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats.component';
+import { CompteComponent } from './candidat/compte/compte.component';
 
 export const routes: Routes = [
   // Layout Public
@@ -38,7 +39,8 @@ export const routes: Routes = [
     path: 'candidat', component: CandidatLayoutComponent, children: [
       { path: 'userDashbord', component: UserDashbordComponent },
       { path: 'form-candidature', component: FormCandidatureComponent },
-      { path: 'candidature', component: CandidatureComponent }
+      { path: 'candidature', component: CandidatureComponent },
+      { path: 'compte' , component: CompteComponent}
     ]
   },
 

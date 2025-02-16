@@ -13,7 +13,7 @@ table {
   
   /* Style des en-têtes du tableau */
   th {
-    background-color: #007bff;
+    background-color: #1772e8;
     color: white;
     padding: 12px;
     text-align: left;
@@ -50,8 +50,8 @@ table {
     color: white;
   }
   
-  button.modifier {
-    background-color: #ffc107;
+  .buttonmodifier {
+    background-color: #df8020;
     color: black;
   }
   
@@ -66,4 +66,14 @@ table {
     display: flex;
     flex-direction: column;
     overflow-y: auto;
+}
+
+.newAnnonce{ 
+  border-radius: 10px;
+  margin-top: 50px;
+  text-align: center;
+}
+.buttonAnnonce{
+  border: 1px;
+  background-color: #df8020;
 }

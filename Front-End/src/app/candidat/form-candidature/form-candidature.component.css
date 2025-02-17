@@ -22,6 +22,11 @@ a{
   color: #010101;
   margin: 0 30px;
 }
+li a:hover{
+  border-bottom: green solid 2px;
+  border-top: green solid 2px;
+  color: orangered;
+}
 header img{
   height:30%;
   width:30px ;

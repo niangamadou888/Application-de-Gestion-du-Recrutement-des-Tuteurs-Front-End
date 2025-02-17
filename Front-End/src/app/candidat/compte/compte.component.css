@@ -27,8 +27,9 @@ a:hover{
   border-top: green solid 2px;
   color: orangered;
 }
+
 header img{
-  height:30%;
+  height:30px;
   width:30px ;
   margin-left: 10px;
 }

@@ -13,15 +13,15 @@ import { UserAuthService } from '../../core/_services/user-auth.service';
   styleUrl: './connection.component.css'
 })
 export class ConnectionComponent {
-     
-  constructor(private router: Router, 
+
+  constructor(private router: Router,
               private userService : UserService,
               private userAuthService : UserAuthService){}
 
   chooseInscription(){
     this.router.navigate(['/form']);
   }
-  
+
   connection(loginForm: NgForm){
     this.userService.connection(loginForm.value).subscribe(
       (Response: any) => {
@@ -30,8 +30,8 @@ export class ConnectionComponent {
           return;
       }
         this.userAuthService.setRoles(Response.user.role);
-        this.userAuthService.setToken(Response.jwtToken); 
-        
+        this.userAuthService.setToken(Response.jwtToken);
+
         const role = Response.user.role[0].roleName;
         if(role === 'Admin'){
           this.router.navigate(['/admin/admin-dashbord']);
@@ -42,7 +42,7 @@ export class ConnectionComponent {
       (error)=>{
         console.log(error);
         alert('Email ou Mot de passe incorrect. Veuillez réessayer.');
-      }      
+      }
     );
   }
 }

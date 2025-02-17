@@ -1,1 +1,36 @@
-<p>liste-candidats works!</p>
+<body>
+    <div class="search-container">
+        <input 
+            type="text" 
+            [(ngModel)]="searchTerm"
+            placeholder="Rechercher un candidat..." 
+            class="search-input"
+        />
+        <button class="btn btn-primary" (click)="searchCandidat()">🔍 Rechercher</button>
+    </div>
+
+    <div class="container mt-5 pt-5">
+        <table>
+            <thead>
+                <tr>
+                    <th>Prenom et Nom</th>
+                    <th>Email</th>
+                    <th>Statut</th>
+                    <th>Date de soumission</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let candidat of filteredCandidats">
+                    <td>{{ candidat.nom }}</td>
+                    <td>{{ candidat.mail }}</td>
+                    <td>{{ candidat.statut }}</td>
+                    <td>{{ candidat.date }}</td>
+                    <td>
+                        <button (click)="search(candidat.id)">Voir dossier</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

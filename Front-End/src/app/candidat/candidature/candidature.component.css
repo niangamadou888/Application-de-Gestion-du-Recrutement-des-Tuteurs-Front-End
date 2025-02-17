@@ -22,8 +22,17 @@ a{
   color: #010101;
   margin: 0 30px;
 }
+li a:hover{
+  border-bottom: green solid 2px;
+  border-top: green solid 2px;
+  color: orangered;
+}
+header{
+  position:fixed;
+  width: 100%;
+}
 header img{
-  height:30%;
+  height:30px;
   width:30px ;
   margin-left: 10px;
 }
@@ -99,6 +108,9 @@ h3{
   width: 100px;
   color:#faf8f8;
 }
+.bouton1 button:hover{
+  background-color: green;
+}
 .annonces .container .bouton1{
   display: flex;
   justify-content: space-between;
@@ -116,4 +128,8 @@ h3{
   margin-bottom:100px ;
   margin-left: 25%;
   height: 30px;
+}
+.Postuler button:hover{
+  background-color: #0188ff;
+  border-color: green;
 }

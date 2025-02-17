@@ -22,8 +22,17 @@ a{
   color: #010101;
   margin: 0 30px;
 }
+li a:hover{
+  border-bottom: green solid 2px;
+  border-top: green solid 2px;
+  color: orangered;
+}
+header{
+  position:fixed;
+  width: 100%;
+}
 header img{
-  height:30%;
+  height:30px;
   width:30px ;
   margin-left: 10px;
 }
@@ -79,8 +88,4 @@ nav li {
   text-decoration: none;
   border-radius: 20px;
 }
-footer{
-  background-color: gainsboro;
-  text-align: center;
 
-}

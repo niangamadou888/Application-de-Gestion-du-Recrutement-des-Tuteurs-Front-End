@@ -22,7 +22,7 @@ export const authGuard: CanActivateFn = (route, state) => {
         return false;
       } 
     }
-    router.createUrlTree(['/']);
+    router.createUrlTree(['/public/connection']);
     return false;
   }
   return router.createUrlTree(['/']);

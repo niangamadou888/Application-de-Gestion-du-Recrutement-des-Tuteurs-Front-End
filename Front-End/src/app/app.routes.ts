@@ -23,6 +23,7 @@ import { AjoutAnneeComponent } from './admin/ajout-annee/ajout-annee.component';
 import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossiers.component';
 import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats.component';
 import { CompteComponent } from './candidat/compte/compte.component';
+import { authGuard } from './core/_auth/auth.guard';
 
 export const routes: Routes = [
   // Layout Public
@@ -37,7 +38,7 @@ export const routes: Routes = [
   // Layout Candidat
   {
     path: 'candidat', component: CandidatLayoutComponent, children: [
-      { path: 'userDashbord', component: UserDashbordComponent },
+      { path: 'userDashbord', component: UserDashbordComponent, canActivate: [authGuard], data:{roles:['User']} },
       { path: 'form-candidature', component: FormCandidatureComponent },
       { path: 'candidature', component: CandidatureComponent },
       { path: 'compte' , component: CompteComponent}
@@ -47,7 +48,7 @@ export const routes: Routes = [
   // Layout Admin
   {
     path: 'admin', component: AdminLayoutComponent, children: [
-      { path: 'admin-dashbord', component: AdminDashbordComponent },
+      { path: 'admin-dashbord', component: AdminDashbordComponent, canActivate:[authGuard], data:{roles:['Admin']} },
       { path: 'gestion-annonces', component: GestionAnnoncesComponent },
       { path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
       { path: 'ajout-annee', component: AjoutAnneeComponent },

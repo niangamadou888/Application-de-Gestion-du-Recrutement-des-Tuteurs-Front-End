@@ -24,6 +24,7 @@ import { GestionDossiersComponent } from './admin/gestion-dossiers/gestion-dossi
 import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats.component';
 import { CompteComponent } from './candidat/compte/compte.component';
 import { authGuard } from './core/_auth/auth.guard';
+import { NotificationsComponent } from './candidat/notifications/notifications.component';
 
 export const routes: Routes = [
   // Layout Public
@@ -41,7 +42,8 @@ export const routes: Routes = [
       { path: 'userDashbord', component: UserDashbordComponent, canActivate: [authGuard], data:{roles:['User']} },
       { path: 'form-candidature', component: FormCandidatureComponent },
       { path: 'candidature', component: CandidatureComponent },
-      { path: 'compte' , component: CompteComponent}
+      { path: 'compte' , component: CompteComponent},
+      { path: 'notifications' , component: NotificationsComponent}
     ]
   },
 

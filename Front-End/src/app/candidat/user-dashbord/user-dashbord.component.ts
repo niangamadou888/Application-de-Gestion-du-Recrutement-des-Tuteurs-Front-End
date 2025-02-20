@@ -36,4 +36,7 @@ export class UserDashbordComponent {
    chooseCompte(){
     this.router.navigate(['/candidat/compte'])
    }
+   chooseNotifications(){
+    this.router.navigate(['/candidat/notifications'])
+   }
 }

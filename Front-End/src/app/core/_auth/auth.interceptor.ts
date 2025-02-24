@@ -16,7 +16,10 @@ export class AuthInterceptor implements HttpInterceptor{
         if(req.headers.get('No-Auth')==='True'){
             return next.handle(req.clone());
         }
+
         const token = this.userAuthService.getToken();
+         
+        // Si un token est présent, l'ajouter à la requête HTTP
         req = this.addToken(req, token);
         return next.handle(req).pipe(
             catchError(

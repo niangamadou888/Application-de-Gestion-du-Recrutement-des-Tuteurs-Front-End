@@ -36,23 +36,18 @@ RequestHeader=new HttpHeaders({
   }
   
   public roleMatch(allowedRoles: string[]): boolean {
-    let isMatch=false;
-    const userRoles : any=this.userAuthService.getRoles();
+    let isMatch=false;  // Variable pour vérifier si l'utilisateur a un rôle autorisé
+    const userRoles : any=this.userAuthService.getRoles(); // Récupération des rôles de l'utilisateur
 
-    if (userRoles !== null && userRoles) {
+    if (userRoles !== null && userRoles) { // Vérifie si l'utilisateur a des rôles
       for (let i = 0; i < userRoles.length; i++) {
-        for(let j = 0; j < allowedRoles.length; j++){
-          if(userRoles[i].roleName === allowedRoles[j]){
-            isMatch = true;
-            return isMatch;
-          }else{
-            return isMatch;
-          }
-
+        if (allowedRoles.includes(userRoles[i].roleName)) { // Vérifie si le rôle est autorisé
+          isMatch = true;
+          break; // Dès qu'on trouve une correspondance, on sort de la boucle
         }
       }
     }
-    return false;
+    return isMatch;
   }
     
 }

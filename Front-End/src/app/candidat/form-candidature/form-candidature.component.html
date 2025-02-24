@@ -12,30 +12,30 @@
 
 <div class="container">
   <h1>Postulez dès maintenant !</h1>
-  <form action="#" method="post">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" method="post">
       <div class="input-group">
           <label for="nom">Nom complet:</label>
-          <input type="text" id="nom" name="nom" required>
+          <input type="text" id="nom" name="nom" formControlName="nom" required>
       </div>
       <div class="input-group">
           <label for="email">Adresse e-mail:</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" formControlName="email" required>
       </div>
       <div class="input-group">
           <label for="telephone">Numéro de téléphone:</label>
-          <input type="tel" id="telephone" name="telephone" required>
+          <input type="tel" id="telephone" name="telephone"  formControlName="telephone" required>
       </div>
       <div class="input-group">
           <label for="date_naissance">Date de naissance:</label>
-          <input type="date" id="date_naissance" name="date_naissance" required>
+          <input type="date" id="date_naissance" name="date_naissance" formControlName="date_naissance" required>
       </div>
       <div class="input-group">
           <label for="adresse">Adresse:</label>
-          <input type="text" id="adresse" name="adresse" required>
+          <input type="text" id="adresse" name="adresse" formControlName="adresse" required>
       </div>
       <div class="input-group">
           <label for="niveau_etudes">Niveau d'études actuel:</label>
-          <select id="niveau_etudes" name="niveau_etudes" required>
+          <select id="niveau_etudes" name="niveau_etudes" formControlName="niveau_etudes" required>
               <option value="licence">Licence</option>
               <option value="master">Master</option>
               <option value="autre">Autre</option>
@@ -43,35 +43,35 @@
       </div>
       <div class="input-group">
           <label for="domaine">Domaine de spécialisation:</label>
-          <input type="text" id="domaine" name="domaine" required>
+          <input type="text" id="domaine" name="domaine" formControlName="domaine" required>
       </div>
       <div class="input-group">
           <label for="experience">Expérience professionnelle liée au domaine:</label>
-          <textarea id="experience" name="experience" required></textarea>
+          <textarea id="experience" name="experience" formControlName="experience" required></textarea>
       </div>
       <div class="input-group">
           <label for="universite">Université ou établissement fréquenté:</label>
-          <input type="text" id="universite" name="universite" required>
+          <input type="text" id="universite" name="universite" formControlName="universite" required>
       </div>
       <div class="input-group">
           <label for="cv">CV:</label>
-          <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" required>
+          <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'cv')"  required>
       </div>
       <div class="input-group">
           <label for="motivation">Lettre de motivation:</label>
-          <input type="file" id="motivation" name="motivation" accept=".pdf, .doc, .docx" required>
+          <input type="file" id="LettreMotivation" name="LettreMotivation" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'LettreMotivation')" required>
       </div>
       <div class="input-group">
           <label for="diplome">Diplôme ou attestation académique:</label>
-          <input type="file" id="diplome" name="diplome" accept=".pdf, .doc, .docx" required>
+          <input type="file" id="diplome" name="diplome" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'diplome')"  required>
       </div>
       <div class="input-group">
           <label for="disponibilite">Votre disponibilité hebdomadaire pour le tutorat (en heures):</label>
-          <input type="number" min="2" id="disponibilite" name="disponibilite" required>
+          <input type="number" min="2" id="disponibilite" name="disponibilite" formControlName="disponibilite" required>
       </div>
       <div class="input-group">
           <label for="cours">Quels cours ou modules souhaitez-vous enseigner ?</label>
-          <select id="cours" name="cours" multiple required>
+          <select id="cours" name="cours" multiple formControlName="cours" required>
               <option value="math">Mathématiques</option>
               <option value="physique">Physique</option>
               <option value="informatique">Informatique</option>
@@ -80,12 +80,11 @@
       </div>
       <div class="input-groupe">
           <label for="declaration">
-              <input type="checkbox" id="declaration" name="declaration" required>
+              <input type="checkbox" id="declaration" name="declaration" formControlName="declaration" required>
               Je certifie que les informations fournies sont exactes et complètes.
           </label>
       </div>
-
-  </form>
-  <button type="submit">Soumettre la demande</button>
+      <button type="submit">Soumettre la demande</button>
+  </form>  
 </div>
 

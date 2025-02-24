@@ -11,43 +11,24 @@
 </header>
 <h1>Mes candidatures</h1>
 <h5>Historique des candidatures</h5>
-<section class="annonces">
+<section class="annonces" *ngFor="let candidature of candidatures">
   <div class="container">
-      <div class="img">
-        <img src="../assets/image/IA.jpg" alt="">
+    <div class="img">
+      <img [src]="candidature.image || '../assets/image/default.png'" alt="">
+    </div>
+    <div class="text">
+      <h3>{{ candidature.titre }}</h3>
+      <p>{{ candidature.description }}</p>
+      <br><br>
+      <div class="bouton1">
+        <button [disabled]="candidature.statut !== 'En cours de traitement'">
+          {{ candidature.statut === 'En cours de traitement' ? 'Modifier' : 'Soumise' }}
+        </button>
       </div>
-      <div class="text">
-        <h3>APPEL A CANDIDATURE 2023 - 2024</h3>
-        <p>Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </p>
-        <br><br>
-        <div class="bouton">
-          <button>Soumise</button>
-          <div class="img1">
-            <img src="../assets/image/cadenas.png" alt="">
-          </div>
-        </div>
-      </div>
+    </div>
   </div>
 </section>
 
-<section class="annonces">
-  <div class="container">
-      <div class="img">
-        <img src="../assets/image/informatique.jpg" alt="">
-      </div>
-      <div class="text">
-        <h3>APPEL A CANDIDATURE 2024 - 2025</h3>
-        <p>Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story. </p>
-        <br><br>
-        <div class="bouton1">
-          <button>Modifier</button>
-          <div class="img1">
-            <img src="../assets/image/cadenas1.png" alt="">
-          </div>
-        </div>
-      </div>
-  </div>
-</section>
 <div class="Postuler">
   <button routerLink="/candidat/form-candidature" routerLinkActive="active-title">Postuler à une annonce</button>
 </div>

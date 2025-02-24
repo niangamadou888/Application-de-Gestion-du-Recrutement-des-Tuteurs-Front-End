@@ -1,13 +1,69 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { FormCandidatureService } from '../../core/_services/candidature_service/form-candidature.service';
 
 @Component({
   selector: 'app-form-candidature',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule],
   templateUrl: './form-candidature.component.html',
   styleUrl: './form-candidature.component.css'
 })
 export class FormCandidatureComponent {
+
+  formGroup! : FormGroup;
+
+  files : { cv?: File, LettreMotivation?: File, diplome?: File } = {};
+  isLoading = false;
+  successMessage = '';
+  errorMessage = '';
+
+  constructor(private fb:FormBuilder, private http:HttpClient,
+    private formCandidatureService :FormCandidatureService
+  ){}
+
+  ngOnInit(): void {
+    this.formGroup = this.fb.group({
+      nom: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      telephone: ['', Validators.required], 
+      date_naissance: ['', Validators.required],
+      adresse: ['', Validators.required],
+      niveau_etudes: ['', Validators.required],
+      domaine: ['', Validators.required],
+      experience: ['', Validators.required],
+      universite: ['', Validators.required],
+      cv: ['', Validators.required],
+      LettreMotivation: ['', Validators.required],
+      diplome: ['', Validators.required],
+      disponibilite: ['', [Validators.required, Validators.min(2)]],
+      cours: [[], Validators.required],
+      declaration: [false, Validators.requiredTrue]
+    });
+  }
+  onFileSelected(event: any, type:'cv' | 'LettreMotivation' | 'diplome' ) {
+    const file = event.target.files[0];
+    if (file) {
+      this.files[type] = file;
+
+    }
+  }
+  // Méthode onSubmit appelée lors de la soumission du formulaire
+  onSubmit(): void {
+    if (this.formGroup.valid) {
+      // Traite les données du formulaire ici
+      console.log(this.formGroup.value);
+      this.successMessage = 'Candidature soumise avec succès !';
+      this.errorMessage = '';
+    } else {
+      // si le formulaire n'est pas valide
+      console.log('Formulaire invalide');
+      this.errorMessage = 'Veuillez vérifier les champs du formulaire.';
+      this.successMessage = ''; // Réinitialise le message de succès
+    }
+  }
+
 
 }

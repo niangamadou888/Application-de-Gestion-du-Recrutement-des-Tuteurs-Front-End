@@ -1,0 +1,79 @@
+.container {
+    max-width: 950px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    align-content: center;
+    border: #03A63C 1px solid;
+}
+
+.form-container {
+
+    max-width: 560px;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px #0477BF ;
+    text-align: center;
+    margin-bottom: 20px;
+    margin: 50px auto;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: chocolate 1px solid;
+}
+
+.input-group input {
+    border: none;
+    flex-grow: 1;
+    padding: 8px;
+    background: transparent;
+}
+
+.calendar-icon {
+    padding: 5px;
+    cursor: pointer;
+}
+
+button {
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.annees-list {
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px auto;
+    
+}
+
+.annee-item {
+    background: #03A63C;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: #f1f1f1 1px solid;
+    opacity: 90%;
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

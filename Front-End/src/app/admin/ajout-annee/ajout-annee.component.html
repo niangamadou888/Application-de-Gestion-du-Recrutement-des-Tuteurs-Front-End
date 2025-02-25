@@ -1,1 +1,34 @@
-<p>ajout-annee works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<div class="container mt-5 pt-5">
+    <div class="form-container mt-5">
+        <label for="annee">Année académique</label>
+        <div class="input-group">
+            <input 
+                type="text" 
+                id="annee" 
+                [(ngModel)]="nouvelleAnnee" 
+                placeholder="Exemple : 2024-2025"
+            />
+            <span class="calendar-icon">📅</span>
+        </div>
+        <button (click)="ajouterAnnee()">Ajouter</button>
+    </div>
+
+    <div class="annees-list">
+        <div class="annee-item" *ngFor="let annee of anneesAcademiques; let i = index">
+            <span>Année académique</span>
+            <strong>{{ annee }}</strong>
+            <button class="delete-btn" (click)="supprimerAnnee(i)">❌</button>
+        </div>
+    </div>
+</div>

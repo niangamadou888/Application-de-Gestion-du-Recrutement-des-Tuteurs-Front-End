@@ -1,0 +1,96 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    
+  }
+  
+  /* Style des en-têtes du tableau */
+  th {
+    background-color: #df8020;
+    color: white;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Style des lignes du tableau */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    align-items: baseline;
+  }
+  
+  /* Alternance des couleurs pour une meilleure lisibilité */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Effet de survol */
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Style des boutons */
+  button {
+    padding: 6px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+
+  }
+  button:hover {   
+    opacity: 0.8;
+  }
+.search-container {
+    margin: 20px auto;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.search-input {
+    width: 300px;
+    padding: 8px;
+    border: 1px solid #03A63C;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #D9731A;
+}
+/* Ajout d'un style pour les boutons d'actions */
+.action-buttons {
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    gap: 5px; /* Espacement entre les boutons */
+}
+
+/* Style des boutons */
+.btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-info { background-color: #03A63C; color: white; }
+.btn-warning { background-color: #0477BF; color: white; }
+.btn-danger { background-color: #BF0404; color: white; }

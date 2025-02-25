@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CandidatureService {
 
-  PATH_OF_API = "https://application-de-gestion-du-recrutement.onrender.com";
+  PATH_OF_API = "https://application-de-gestion-du-recrutement.onrender.com/api/candidatures";
 
   constructor(
     private http: HttpClient

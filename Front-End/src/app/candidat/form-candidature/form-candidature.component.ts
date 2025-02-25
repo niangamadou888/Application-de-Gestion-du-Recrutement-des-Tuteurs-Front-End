@@ -79,7 +79,6 @@ export class FormCandidatureComponent {
       );
     }else {
       // si le formulaire n'est pas valide
-      console.log('Formulaire invalide');
       console.log(this.formGroup.errors);  // Affichez les erreurs globales
     Object.keys(this.formGroup.controls).forEach(control => {
       if (this.formGroup.get(control)?.invalid) {

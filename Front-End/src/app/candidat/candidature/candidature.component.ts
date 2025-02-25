@@ -17,7 +17,7 @@ export class CandidatureComponent {
   constructor(private candidatureService: CandidatureService) {}
 
   ngOnInit(): void {
-    const userId = '123'; // Remplace par l'ID de l'utilisateur actuel
+    const userId = localStorage.getItem('userId')!;
     this.candidatureService.getCandidatures(userId).subscribe(
       (data) => {
         this.candidatures = data;

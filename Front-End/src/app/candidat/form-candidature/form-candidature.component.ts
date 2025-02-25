@@ -37,11 +37,20 @@ export class FormCandidatureComponent {
       declaration: [false, Validators.requiredTrue]
     });
   }
-  onFileSelected(event: any, type:'cv' | 'LettreMotivation' | 'diplome' ) {
+  onFileSelected(event: any, type: 'cv' | 'LettreMotivation' | 'diplome') {
     const file = event.target.files[0];
     if (file) {
+      // Vérifiez le type de fichier et la taille
+      if (file.size > 5000000) {  // Limite à 5MB
+        console.log('Le fichier est trop volumineux');
+        return;
+      }
+      if (!['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(file.type)) {
+        console.log('Type de fichier invalide');
+        return;
+      }
       this.files[type] = file;
-
+      this.formGroup.get(type)?.setValue(file.name);  // Ajoutez le nom du fichier au formulaire
     }
   }
   // Méthode onSubmit appelée lors de la soumission du formulaire
@@ -71,6 +80,12 @@ export class FormCandidatureComponent {
     }else {
       // si le formulaire n'est pas valide
       console.log('Formulaire invalide');
+      console.log(this.formGroup.errors);  // Affichez les erreurs globales
+    Object.keys(this.formGroup.controls).forEach(control => {
+      if (this.formGroup.get(control)?.invalid) {
+        console.log(`Le champ ${control} est invalide.`);
+      }
+    });
       this.errorMessage = 'Veuillez vérifier les champs du formulaire.';
       this.successMessage = ''; // Réinitialise le message de succès
     }

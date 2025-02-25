@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -16,11 +15,10 @@ export class FormCandidatureComponent {
   formGroup! : FormGroup;
 
   files : { cv?: File, LettreMotivation?: File, diplome?: File } = {};
-  isLoading = false;
   successMessage = '';
   errorMessage = '';
 
-  constructor(private fb:FormBuilder, private http:HttpClient,
+  constructor(private fb:FormBuilder,
     private formCandidatureService :FormCandidatureService
   ){}
 
@@ -35,11 +33,7 @@ export class FormCandidatureComponent {
       domaine: ['', Validators.required],
       experience: ['', Validators.required],
       universite: ['', Validators.required],
-      cv: ['', Validators.required],
-      LettreMotivation: ['', Validators.required],
-      diplome: ['', Validators.required],
       disponibilite: ['', [Validators.required, Validators.min(2)]],
-      cours: [[], Validators.required],
       declaration: [false, Validators.requiredTrue]
     });
   }
@@ -53,11 +47,28 @@ export class FormCandidatureComponent {
   // Méthode onSubmit appelée lors de la soumission du formulaire
   onSubmit(): void {
     if (this.formGroup.valid) {
-      // Traite les données du formulaire ici
-      console.log(this.formGroup.value);
-      this.successMessage = 'Candidature soumise avec succès !';
-      this.errorMessage = '';
-    } else {
+      const candidatureData = this.formGroup.value;
+      const userId = localStorage.getItem('userId')!;
+      const annonceId = 0;
+
+      this.formCandidatureService.onSubmit(
+        candidatureData,
+        this.files,
+        userId,
+        annonceId
+      ).subscribe(
+        (response) => {
+  
+          console.log(this.formGroup.value);
+          this.successMessage = 'Candidature soumise avec succès !';
+          this.errorMessage = '';
+        }, 
+        (error) => {
+          this.errorMessage = 'Une erreur s\'est produite. Veuillez réessayer.';
+          this.successMessage = '';
+        }
+      );
+    }else {
       // si le formulaire n'est pas valide
       console.log('Formulaire invalide');
       this.errorMessage = 'Veuillez vérifier les champs du formulaire.';

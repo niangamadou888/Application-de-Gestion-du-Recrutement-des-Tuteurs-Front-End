@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { FormCandidatureService } from '../../core/_services/candidature_service/form-candidature.service';
 
 @Component({
@@ -10,15 +10,15 @@ import { FormCandidatureService } from '../../core/_services/candidature_service
   templateUrl: './form-candidature.component.html',
   styleUrl: './form-candidature.component.css'
 })
-export class FormCandidatureComponent {
+export class FormCandidatureComponent implements OnInit {
 
-  formGroup! : FormGroup;
+  formGroup : FormGroup = new FormGroup({});
 
   files : { cv?: File, LettreMotivation?: File, diplome?: File } = {};
   successMessage = '';
   errorMessage = '';
 
-  constructor(private fb:FormBuilder,
+  constructor(private fb:FormBuilder, private route: ActivatedRoute,
     private formCandidatureService :FormCandidatureService
   ){}
 
@@ -58,7 +58,12 @@ export class FormCandidatureComponent {
     if (this.formGroup.valid) {
       const candidatureData = this.formGroup.value;
       const userId = localStorage.getItem('userId')!;
-      const annonceId = 0;
+      const annonceId = this.route.snapshot.params['annonceId'];
+
+      if (!userId || !annonceId) {
+        this.errorMessage = 'Identifiant utilisateur ou annonce manquant.';
+        return;
+      }
 
       this.formCandidatureService.onSubmit(
         candidatureData,
@@ -92,3 +97,4 @@ export class FormCandidatureComponent {
 
 
 }
+ 

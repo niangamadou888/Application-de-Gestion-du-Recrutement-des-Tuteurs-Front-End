@@ -32,7 +32,7 @@
         <p>{{ annonce.date }}</p>
         <p>{{ annonce.description }}</p>
         <br><br>
-        <a class="postuler" (click)="choosePostuler()">Postuler</a>
+        <a class="postuler" [routerLink]="['/candidat/form-candidature', annonce.id]" >Postuler</a>
       </div>
     </div>
   </div>

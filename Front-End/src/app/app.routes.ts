@@ -42,7 +42,7 @@ export const routes: Routes = [
   {
     path: 'candidat', component: CandidatLayoutComponent, children: [
       { path: 'userDashbord', component: UserDashbordComponent, canActivate: [authGuard], data:{roles:['User']} },
-      { path: 'form-candidature', component: FormCandidatureComponent },
+      { path: 'form-candidature/:id', component: FormCandidatureComponent },
       { path: 'candidature', component: CandidatureComponent },
       { path: 'compte' , component: CompteComponent},
       { path: 'notifications' , component: NotificationsComponent},

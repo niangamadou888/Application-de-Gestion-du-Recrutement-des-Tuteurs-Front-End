@@ -9,26 +9,17 @@
       <button class="btn btn-success me-2">Déconnexion</button>
   </div>
 </header>
-<form >
+<form ><h1>Informations personnelles</h1>
   <div class="compte">
       <div class="input">
-        <div class="input-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" name="nom" required>
-        </div>
-        <div class="input-group">
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" name="prenom" required>
-        </div>
-        <div class="input-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
+        <h4>Prénom: Ousmane</h4>
+        <h4>Nom: Cissé</h4>
+        <h4>Email: cisséousmane...gmail.com</h4>
       </div>
       <div class="photo">
         <img alt="" src="../assets/image/profil.png">
       </div>
     </div>
-    <a href="#" class="btn">Modifier les informations personnelles</a><br>
+    <a routerLink="/candidat/modifier-profil" class="btn">Modifier les informations personnelles</a><br>
     <a href="#" class="btn">Modifier le mot de passe</a>
 </form>

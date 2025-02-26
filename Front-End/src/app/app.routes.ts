@@ -25,6 +25,7 @@ import { ListeCandidatsComponent } from './admin/liste-candidats/liste-candidats
 import { CompteComponent } from './candidat/compte/compte.component';
 import { authGuard } from './core/_auth/auth.guard';
 import { NotificationsComponent } from './candidat/notifications/notifications.component';
+import { ModifierProfilComponent } from './candidat/modifier-profil/modifier-profil.component';
 
 export const routes: Routes = [
   // Layout Public
@@ -43,7 +44,8 @@ export const routes: Routes = [
       { path: 'form-candidature', component: FormCandidatureComponent },
       { path: 'candidature', component: CandidatureComponent },
       { path: 'compte' , component: CompteComponent},
-      { path: 'notifications' , component: NotificationsComponent}
+      { path: 'notifications' , component: NotificationsComponent},
+      { path: 'modifier-profil' , component: ModifierProfilComponent}
     ]
   },
 

@@ -51,7 +51,7 @@ nav li {
   background-color: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px #cb6f29;
+  border: solid 2px orangered ;
   width: 800px; /* Ajustez la largeur selon vos besoins */
   margin-left: 30%;
   margin-top: 100px;
@@ -102,12 +102,15 @@ form{
   max-width:500px;
   width: 100%;
   margin-top: 50px;
-  margin-left: 15%;
-  border-color: #0056b3;
+  margin-left: 45%;
+  border-color: #026FB6;
 }
 
 .container button:hover {
-  background-color: #0056b3;
+  background-color: #026FB6;
 }
-
+h1{
+  color: #026FB6;
+  border-bottom: 1px solid orangered;
+}
 

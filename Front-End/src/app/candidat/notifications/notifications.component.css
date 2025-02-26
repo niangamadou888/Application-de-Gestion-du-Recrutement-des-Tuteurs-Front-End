@@ -27,13 +27,21 @@ a:hover{
   border-top: green solid 2px;
   color: orangered;
 }
+.active{
+  border-bottom: orangered solid 2px;
+  border-top: orangered solid 2px;
+  color: green;
+}
 
 header img{
   height:30px;
   width:30px ;
   margin-left: 10px;
 }
-
+header{
+  position:fixed;
+  width: 100%;
+}
 .card-header ul {
   list-style: none;
   margin: 0;

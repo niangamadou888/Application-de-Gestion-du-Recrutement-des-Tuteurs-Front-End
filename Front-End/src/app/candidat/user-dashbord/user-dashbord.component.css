@@ -60,6 +60,7 @@ nav li {
   text-align: left;
   padding: 150px 0;
   padding-left: 40px;
+  border-bottom: 15px solid orangered;
 }
 
 .annonces {
@@ -67,7 +68,7 @@ nav li {
 }
 
 .annonce {
-  border: 1px solid #ccc;
+  border: 1px solid orangered;
   margin-bottom: 20px;
   padding: 20px;
   margin-left: 50px;
@@ -82,10 +83,15 @@ nav li {
 }
 .postuler {
   display: inline-block;
-  background-color: #007bff;
+  background-color: green;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 20px;
 }
-
+.container h1 {
+  margin-top: 200px;
+}
+h3{
+  color: #007bff;
+}

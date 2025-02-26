@@ -22,13 +22,18 @@ a{
   color: #010101;
   margin: 0 30px;
 }
-li a:hover{
+a:hover{
   border-bottom: green solid 2px;
   border-top: green solid 2px;
   color: orangered;
 }
+.active{
+  border-bottom: orangered solid 2px;
+  border-top: orangered solid 2px;
+  color: green;
+}
 header img{
-  height:30%;
+  height:30px;
   width:30px ;
   margin-left: 10px;
 }
@@ -46,28 +51,28 @@ nav li {
   margin-left: 40px;
   text-decoration: none;
 }
-
-.container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  border: solid 2px orangered ;
-  width: 800px; /* Ajustez la largeur selon vos besoins */
-  margin-left: 30%;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
 form{
-  max-width: 800px;
-  width: 50%;
+  max-width: 80%;
+  margin: 150px 100px;
+  border-top: orangered solid 2px;
+  border-left: orangered solid 2px;
+  border-right: orangered solid 2px;
+  border-bottom:  orangered solid 4px;
+  border-radius: 6px;
+  height: 600px;
 }
-.container h1 {
-  text-align: center;
-  margin-bottom: 20px;
+.compte{
+  max-width: 100%;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
 }
-
 .input-group {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .input-group label {
@@ -84,33 +89,39 @@ form{
   border-radius: 4px;
   box-sizing: border-box;
 }
+form .btn{
+  height: 35px;
+  background-color: #026FB6;
+  border-radius: 6px;
+  color: aliceblue;
+  width: 40%;
+  border-color: green;
+  margin-left: 30%;
+}
+
+form .btn{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+form .btn:hover{
+  background-color: green;
+}
 
 .input-group textarea {
   height: 120px;
 }
-
-.input-group select[multiple] {
-  height: 100px;
+.photo img{
+  height: 260px;
+  width: 250px;
+  padding-top: 10%;
+  margin-left: 5%;
+  border-radius: 50%;
 }
-
-.container button {
-  background-color: #0c9205f7;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  max-width:500px;
-  width: 100%;
-  margin-top: 50px;
-  margin-left: 45%;
-  border-color: #026FB6;
-}
-
-.container button:hover {
-  background-color: #026FB6;
+.compte .input{
+  max-width: 100%;
+  width: 60%;
 }
 h1{
   color: #026FB6;
   border-bottom: 1px solid orangered;
 }
-

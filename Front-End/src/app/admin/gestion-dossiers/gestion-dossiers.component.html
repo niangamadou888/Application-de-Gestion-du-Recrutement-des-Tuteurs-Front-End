@@ -1,1 +1,46 @@
-<p>gestion-dossiers works!</p>
+<body>
+    <!-- Champ de recherche pour filtrer les dossiers -->
+    <div class="search-container mt-5">
+        <input 
+            type="text" 
+            [(ngModel)]="searchTerm"
+            placeholder="Rechercher un dossier..." 
+            class="search-input"
+        />
+        <button class="btn btn-primary" (click)="searchDossier()">🔍 Rechercher</button>
+    </div>
+
+    <!-- Tableau affichant la liste des dossiers -->
+    <div class="container mt-5 pt-5">
+        <table>
+            <thead>
+                <tr>
+                    <th>Prenom et Nom</th>
+                    <th>Email</th>
+                    <th>Statut</th>
+                    <th>Date de soumission</th>
+                    <th>Année académique</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Boucle sur la liste des dossiers pour les afficher -->
+                <tr *ngFor="let dossier of filteredDossiers">
+                    <td>{{ dossier.nom }}</td>
+                    <td>{{ dossier.mail }}</td>
+                    <td>{{ dossier.statut }}</td>
+                    <td>{{ dossier.date }}</td>
+                    <td>{{ dossier.anneeAcademique }}</td>
+                    <td>
+                        <!-- Boutons alignés verticalement pour voir, modifier et supprimer -->
+                        <div class="action-buttons">
+                            <button (click)="voirDossier(dossier.id)" class="btn btn-info">👁 Voir</button>
+                            <button (click)="modifierDossier(dossier.id)" class="btn btn-warning">✏ Modifier</button>
+                            <button (click)="supprimerDossier(dossier.id)" class="btn btn-danger">🗑 Supprimer</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

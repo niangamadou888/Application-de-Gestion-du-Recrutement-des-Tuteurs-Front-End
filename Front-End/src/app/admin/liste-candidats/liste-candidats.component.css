@@ -58,12 +58,19 @@ table {
 .search-input {
     width: 300px;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #03A63C;
     border-radius: 5px;
 }
 
 .btn {
-    padding: 8px 15px;
-    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    background: linear-gradient(135deg, #0477BF, #03A63C); /* Dégradé de couleurs du logo */
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }

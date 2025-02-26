@@ -27,11 +27,19 @@ a:hover{
   border-top: green solid 2px;
   color: orangered;
 }
-
+.active{
+  border-bottom: orangered solid 2px;
+  border-top: orangered solid 2px;
+  color: green;
+}
 header img{
   height:30px;
   width:30px ;
   margin-left: 10px;
+}
+header{
+  position:fixed;
+  width: 100%;
 }
 
 .card-header ul {
@@ -51,6 +59,7 @@ nav li {
 form{
   max-width: 80%;
   margin: 150px 100px;
+  border-top: orangered solid 2px;
   border-left: orangered solid 2px;
   border-right: orangered solid 2px;
   border-bottom:  orangered solid 4px;
@@ -114,4 +123,8 @@ form .btn:hover{
 .compte .input{
   max-width: 100%;
   width: 60%;
+}
+h1{
+  color: #026FB6;
+  border-bottom: 1px solid orangered;
 }

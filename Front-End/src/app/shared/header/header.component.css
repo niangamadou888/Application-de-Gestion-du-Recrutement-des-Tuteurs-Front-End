@@ -10,11 +10,13 @@
 .logo-container {
     display: flex;
     align-items: center;
+    margin-right: 2%;
 }
 
 .logo-container img {
     height: 50px; /* Augmente la taille du logo */
     width: auto;
+    
 }
 
 .nav-links {

@@ -68,12 +68,27 @@ table {
     overflow-y: auto;
 }
 
-.newAnnonce{ 
-  border-radius: 10px;
-  margin-top: 50px;
-  text-align: center;
+/* Conteneur du bouton */
+.newAnnonce {
+  text-align: center; /* Centrer le bouton */
+  margin-top: 20px;
 }
-.buttonAnnonce{
-  border: 1px;
-  background-color: #df8020;
+
+/* Style du bouton */
+.buttonAnnonce {
+  display: inline-block;
+  background: linear-gradient(135deg, #0477BF, #03A63C); /* Dégradé de couleurs du logo */
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet au survol */
+.buttonAnnonce:hover {
+  background: linear-gradient(135deg, #048ABF, #D9731A);
+  transform: scale(1.05); /* Légère animation de zoom */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }

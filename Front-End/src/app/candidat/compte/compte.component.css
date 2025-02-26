@@ -37,6 +37,10 @@ header img{
   width:30px ;
   margin-left: 10px;
 }
+header{
+  position:fixed;
+  width: 100%;
+}
 
 .card-header ul {
   list-style: none;

@@ -55,7 +55,7 @@
       </div>
       <div class="input-group">
           <label for="cv">CV:</label>
-          <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'cv')"  required>
+          <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'cv')"  required >
       </div>
       <div class="input-group">
           <label for="motivation">Lettre de motivation:</label>
@@ -69,7 +69,7 @@
           <label for="disponibilite">Votre disponibilité hebdomadaire pour le tutorat (en heures):</label>
           <input type="number" min="2" id="disponibilite" name="disponibilite" formControlName="disponibilite" required>
 
-      </div>  
+      </div>
 
       <div class="input-groupe">
           <label for="declaration">
@@ -78,6 +78,6 @@
           </label>
       </div>
       <button type="submit">Soumettre la demande</button>
-  </form>  
+  </form>
 </div>
 

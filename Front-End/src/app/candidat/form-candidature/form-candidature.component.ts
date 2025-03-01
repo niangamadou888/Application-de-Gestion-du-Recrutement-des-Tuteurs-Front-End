@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { FormCandidatureService } from '../../core/_services/candidature_service/form-candidature.service';
+import { UserAuthService } from '../../core/_services/user-auth.service';
 
 @Component({
   selector: 'app-form-candidature',
@@ -19,7 +20,8 @@ export class FormCandidatureComponent implements OnInit {
   errorMessage = '';
 
   constructor(private fb:FormBuilder, private route: ActivatedRoute,
-    private formCandidatureService :FormCandidatureService
+    private formCandidatureService :FormCandidatureService,
+    private userAuthService: UserAuthService
   ){}
 
   ngOnInit(): void {
@@ -57,7 +59,7 @@ export class FormCandidatureComponent implements OnInit {
   onSubmit(): void {
     if (this.formGroup.valid) {
       const candidatureData = this.formGroup.value;
-      const userId = localStorage.getItem('userId')!;
+      const userId = this.userAuthService.getUserId();
       const annonceId = this.route.snapshot.params['annonceId'];
 
       if (!userId || !annonceId) {

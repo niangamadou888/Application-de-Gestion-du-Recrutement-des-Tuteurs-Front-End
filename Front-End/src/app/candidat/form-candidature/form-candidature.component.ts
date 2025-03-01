@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, RouterLink, RouterLinkActive } from '@angular/router';
 import { FormCandidatureService } from '../../core/_services/candidature_service/form-candidature.service';
+import { HeaderUserComponent } from '../../shared/header-user/header-user.component';
 
 @Component({
   selector: 'app-form-candidature',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule],
+  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, HeaderUserComponent],
   templateUrl: './form-candidature.component.html',
   styleUrl: './form-candidature.component.css'
 })

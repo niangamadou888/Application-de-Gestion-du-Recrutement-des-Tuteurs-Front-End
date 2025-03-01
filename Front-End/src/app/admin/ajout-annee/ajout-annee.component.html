@@ -11,24 +11,27 @@
 </html>
 <div class="container mt-5 pt-5">
     <div class="form-container mt-5">
-        <label for="annee">Année académique</label>
-        <div class="input-group">
-            <input 
-                type="text" 
-                id="annee" 
-                [(ngModel)]="nouvelleAnnee" 
-                placeholder="Exemple : 2024-2025"
-            />
-            <span class="calendar-icon">📅</span>
-        </div>
-        <button (click)="ajouterAnnee()">Ajouter</button>
+        <form [formGroup]="formGroup" (ngSubmit)="ajouterAnnee()">
+            <label for="annee">Année académique</label>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="annee"
+                    formControlName="annee" 
+                    placeholder="Exemple : 2024-2025"
+                />
+                <span class="calendar-icon">📅</span>
+            </div>
+            <button type="submit" [disabled]="formGroup.invalid">Ajouter</button>
+        </form>
     </div>
-
+    
+    
     <div class="annees-list">
-        <div class="annee-item" *ngFor="let annee of anneesAcademiques; let i = index">
+        <div class="annee-item" *ngFor="let annee of annees">
             <span>Année académique</span>
-            <strong>{{ annee }}</strong>
-            <button class="delete-btn" (click)="supprimerAnnee(i)">❌</button>
+            <strong>{{ annee.annee }}</strong>
+            <button class="delete-btn" (click)="supprimerAnnee(annee.id)">❌</button>
         </div>
     </div>
 </div>

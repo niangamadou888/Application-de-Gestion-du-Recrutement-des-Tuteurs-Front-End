@@ -50,7 +50,7 @@ export class AjoutAnneeComponent implements OnInit {
   supprimerAnnee(id: string) {
     if (confirm("Voulez-vous vraiment supprimer cette année académique ?")) {
       this.anneeAcademique.supprimerAnneeAcademique(id).subscribe(() => {
-        this.annees = this.annees.filter(annee => annee.id !== id);
+        this.annees = this.annees.filter(annee => annee.annee !== id);
       });
     }
   }

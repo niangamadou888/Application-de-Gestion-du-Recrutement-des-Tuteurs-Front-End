@@ -31,7 +31,7 @@
         <div class="annee-item" *ngFor="let annee of annees">
             <span>Année académique</span>
             <strong>{{ annee.annee }}</strong>
-            <button class="delete-btn" (click)="supprimerAnnee(annee.id)">❌</button>
+            <button class="delete-btn" (click)="supprimerAnnee(annee.annee)">❌</button>
         </div>
     </div>
 </div>

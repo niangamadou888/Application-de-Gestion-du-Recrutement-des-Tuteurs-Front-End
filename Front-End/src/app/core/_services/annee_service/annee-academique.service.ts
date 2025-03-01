@@ -25,7 +25,7 @@ export class AnneeAcademiqueService {
     const token = this.userAuthService.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this.http.post(`${this.apiURL}/annee-academique`, annee, { headers });
+    return this.http.post(`${this.apiURL}/api/annee-academique`, annee, { headers });
   }
 
   // Supprimer une année académique
@@ -33,6 +33,6 @@ export class AnneeAcademiqueService {
     const token = this.userAuthService.getToken();
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
 
-    return this.http.delete(`${this.apiURL}/annee-academique/${id}`, { headers });
+    return this.http.delete(`${this.apiURL}/api/annee-academique/${id}`, { headers });
   }
 }

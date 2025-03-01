@@ -1,15 +1,7 @@
 
 
 <header class="card-header" >
-    <div class="navbar">
-      <img alt="" src="../assets/image/logo_uvs.png">
-      <ul>
-        <li><a (click)="chooseCompte()">Mon compte</a></li>
-        <li><a (click)="chooseCandidature()">Mes candidatures</a></li>
-        <li><a (click)="chooseNotifications()">Notifications</a></li>
-      </ul>
-        <button class="btn btn-success me-2">Déconnexion</button>
-    </div>
+  <app-header-user> </app-header-user>
 </header>
 
 <section class="hero">
@@ -23,16 +15,49 @@
   <div class="container">
     <div *ngFor="let annonce of annonces" class="annonce">
       <div class="img">
-        <img alt="" [src]="annonce.imageUrl">
+        <img 
+          *ngIf="annonce.titre.toLowerCase().includes('informatique')" 
+          alt="" 
+          [src]="'assets/image/informatique.jpg'">
+        <img 
+          *ngIf="annonce.titre.toLowerCase().includes('mathematique')" 
+          alt="" 
+          [src]="'assets/image/math.jpg'">
+          <img 
+          *ngIf="annonce.titre.toLowerCase().includes('ia')" 
+          alt="" 
+          [src]="'assets/image/IA.jpg'">
+          <img 
+          *ngIf="annonce.titre.toLowerCase().includes('compta')" 
+          alt="" 
+          [src]="'assets/image/compta.jpg'">
+          <img 
+          *ngIf="annonce.titre.toLowerCase().includes('programmation')" 
+          alt="" 
+          [src]="'assets/image/Prog.jpg'">
+          <img 
+          *ngIf="annonce.titre.toLowerCase().includes('sociologie')" 
+          alt="" 
+          [src]="'assets/image/socio.png'">
+          <img 
+          *ngIf="annonce.titre.toLowerCase().includes('reseau')" 
+          alt="" 
+          [src]="'assets/image/Reseau.jpg'">
+          <img 
+          *ngIf="annonce.titre.toLowerCase().includes('data')" 
+          alt="" 
+          [src]="'assets/image/big-data.jpg'">
       </div>
       <div class="text">
         <h3>{{ annonce.titre }}</h3>
         <p>{{ annonce.date }}</p>
         <p>{{ annonce.description }}</p>
         <br><br>
-        <a class="postuler" [routerLink]="['/candidat/form-candidature', annonce.id]" >Postuler</a>
+        <a class="postuler" [routerLink]="['/candidat/form-candidature', annonce.id]">Postuler</a>
       </div>
     </div>
   </div>
 </section>
+
+
 

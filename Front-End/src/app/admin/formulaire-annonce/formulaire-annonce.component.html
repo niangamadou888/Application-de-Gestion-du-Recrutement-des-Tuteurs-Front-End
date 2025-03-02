@@ -11,8 +11,8 @@
         <label for="annee">Année académique</label>
         <select id="annee" [(ngModel)]="annonce.anneeAcademique" name="anneeAcademique" required>
           <option value="">Choisir</option>
-          <option *ngFor="let annee of anneesAcademiques" [value]="annee">{{ annee.annee }}</option>
-        </select>
+          <option *ngFor="let annee of anneesAcademiques" [ngValue]="annee">{{ annee.annee }}</option>
+        </select>        
       </div>
   
       <div class="form-group">

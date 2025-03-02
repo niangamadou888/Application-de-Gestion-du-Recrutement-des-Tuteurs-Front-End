@@ -26,9 +26,10 @@ export class FormulaireAnnonceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Fetch the list of academic years when the component initializes
     this.anneeAcademiqueService.getAnneesAcademiques().subscribe(
       (data) => {
+        // Assuming data is an array of objects like:
+        // [{ id: 1, annee: "2020-2021" }, { id: 2, annee: "2021-2022" }]
         this.anneesAcademiques = data;
       },
       (error) => {
@@ -36,17 +37,25 @@ export class FormulaireAnnonceComponent implements OnInit {
       }
     );
   }
+  
 
   soumettreAnnonce(): void {
     if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
-      this.annonceService.ajouterAnnonce(this.annonce).subscribe(
+      console.log(this.annonce.anneeAcademique);
+      // On s'assure que 'anneeAcademique' est un objet avant d'en extraire la propriété 'annee'
+      const annonceToSend = {
+        titre: this.annonce.titre,
+        anneeAcademique: this.annonce.anneeAcademique, // On envoie la chaîne d'année, pas l'objet complet
+        description: this.annonce.description
+      };
+  
+      // Envoi de l'annonce
+      this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
           console.log('Annonce ajoutée avec succès !', response);
-          console.log(this.annonce);
           this.annonce = { titre: '', anneeAcademique: '', description: '' }; // Réinitialiser le formulaire
         },
         (error) => {
-          console.log(this.annonce);
           console.log("Erreur lors de l'ajout de l'annonce :", error);
         }
       );
@@ -54,4 +63,6 @@ export class FormulaireAnnonceComponent implements OnInit {
       alert("Veuillez remplir tous les champs.");
     }
   }
+  
+  
 }

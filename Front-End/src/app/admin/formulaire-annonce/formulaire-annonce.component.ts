@@ -15,7 +15,7 @@ import { AnnonceService } from '../../core/_services/annonce.service';
 export class FormulaireAnnonceComponent implements OnInit {
   annonce = {
     titre: '',
-    annee: '',
+    anneeAcademique: '',
     description: ''
   };
   anneesAcademiques: any[] | undefined;
@@ -38,14 +38,15 @@ export class FormulaireAnnonceComponent implements OnInit {
   }
 
   soumettreAnnonce(): void {
-    if (this.annonce.titre && this.annonce.annee && this.annonce.description) {
+    if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
       this.annonceService.ajouterAnnonce(this.annonce).subscribe(
         (response) => {
           console.log('Annonce ajoutée avec succès !', response);
-          this.annonce = { titre: '', annee: '', description: '' }; // Réinitialiser le formulaire
+          console.log(this.annonce);
+          this.annonce = { titre: '', anneeAcademique: '', description: '' }; // Réinitialiser le formulaire
         },
         (error) => {
-          console.error("Erreur lors de l'ajout de l'annonce :", error);
+          console.log("Erreur lors de l'ajout de l'annonce :", error);
         }
       );
     } else {

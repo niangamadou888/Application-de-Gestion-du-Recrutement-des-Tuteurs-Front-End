@@ -45,7 +45,7 @@ export class FormulaireAnnonceComponent implements OnInit {
     if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
       const annonceToSend = {
         titre: this.annonce.titre,
-        anneeAcademiqueId: this.annonce.anneeAcademique,  // Send only the ID
+        anneeAcademique: this.annonce.anneeAcademique,  // Send only the ID
         description: this.annonce.description
       };
 

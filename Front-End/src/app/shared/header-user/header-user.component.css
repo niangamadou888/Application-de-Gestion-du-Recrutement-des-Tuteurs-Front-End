@@ -18,6 +18,16 @@
   width: 100%;
   padding-right: 20px;
 }
+.btn{
+  border: 1px solid green;
+  color: green;
+}
+.btn:hover{
+  color: rgb(2, 74, 2);
+  background-color: green;
+  color: aliceblue;
+
+}
 a{
   color: #010101;
   margin: 0 30px;

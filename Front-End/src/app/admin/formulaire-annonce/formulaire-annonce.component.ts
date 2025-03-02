@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AnneeAcademiqueService } from '../../core/_services/annee_service/annee-academique.service';
 import { AnnonceService } from '../../core/_services/annonce.service';
+import { Router } from '@angular/router';
 
 interface AnneeAcademique {
   annee: string;
@@ -26,7 +27,8 @@ export class FormulaireAnnonceComponent implements OnInit {
 
   constructor(
     private annonceService: AnnonceService,
-    private anneeAcademiqueService: AnneeAcademiqueService
+    private anneeAcademiqueService: AnneeAcademiqueService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -53,8 +55,7 @@ export class FormulaireAnnonceComponent implements OnInit {
 
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
-          console.log('Annonce ajoutée avec succès !', response);
-          this.annonce = { titre: '', anneeAcademique: '', description: '' }; // Reset the form
+          this.router.navigate(['/admin/gestion-annonces']);// Reset the form
         },
         (error) => {
           console.log("Erreur lors de l'ajout de l'annonce :", error);

@@ -53,6 +53,8 @@ export class FormulaireAnnonceComponent implements OnInit {
         anneeAcademique: annee, // Access 'annee' explicitly
         description: this.annonce.description
       };
+
+      console.log('Annonce à envoyer:', annonceToSend);
   
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {

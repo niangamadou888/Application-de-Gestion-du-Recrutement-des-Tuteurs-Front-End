@@ -55,6 +55,7 @@ export class FormulaireAnnonceComponent implements OnInit {
 
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
+          this.annonce = { titre: '',anneeAcademique: '', description: '' };
           this.router.navigate(['/admin/gestion-annonces']);// Reset the form
         },
         (error) => {

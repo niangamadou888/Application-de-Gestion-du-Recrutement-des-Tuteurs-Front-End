@@ -19,10 +19,10 @@ interface AnneeAcademique {
 export class FormulaireAnnonceComponent implements OnInit {
   annonce = {
     titre: '',
-    anneeAcademique: {} as AnneeAcademique,
+    anneeAcademiqueId: '',  // Store only the ID of the academic year
     description: ''
   };
-  anneesAcademiques: any[] | undefined;
+  anneesAcademiques: any[] = [];  // Array containing the list of academic years
 
   constructor(
     private annonceService: AnnonceService,
@@ -30,10 +30,9 @@ export class FormulaireAnnonceComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Fetch the list of academic years when the component initializes
     this.anneeAcademiqueService.getAnneesAcademiques().subscribe(
       (data) => {
-        // Assuming data is an array of objects like:
-        // [{ id: 1, annee: "2020-2021" }, { id: 2, annee: "2021-2022" }]
         this.anneesAcademiques = data;
       },
       (error) => {
@@ -41,25 +40,21 @@ export class FormulaireAnnonceComponent implements OnInit {
       }
     );
   }
-  
 
   soumettreAnnonce(): void {
-    if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
-      // Use type assertion to inform TypeScript that 'anneeAcademique' is an object of type 'AnneeAcademique'
-      const annee = (this.annonce.anneeAcademique as AnneeAcademique).annee;
-  
+    if (this.annonce.titre && this.annonce.anneeAcademiqueId && this.annonce.description) {
       const annonceToSend = {
         titre: this.annonce.titre,
-        anneeAcademique: annee, // Access 'annee' explicitly
+        anneeAcademiqueId: this.annonce.anneeAcademiqueId,  // Send only the ID
         description: this.annonce.description
       };
 
-      console.log('Annonce à envoyer:', annonceToSend);
-  
+      console.log(annonceToSend);
+
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
           console.log('Annonce ajoutée avec succès !', response);
-          this.annonce = { titre: '',anneeAcademique: {} as AnneeAcademique, description: '' }; // Reset the form
+          this.annonce = { titre: '', anneeAcademiqueId: '', description: '' }; // Reset the form
         },
         (error) => {
           console.log("Erreur lors de l'ajout de l'annonce :", error);
@@ -69,7 +64,4 @@ export class FormulaireAnnonceComponent implements OnInit {
       alert("Veuillez remplir tous les champs.");
     }
   }
-  
-  
-  
 }

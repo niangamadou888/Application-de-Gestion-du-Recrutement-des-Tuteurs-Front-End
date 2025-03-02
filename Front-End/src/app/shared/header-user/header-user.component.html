@@ -1,11 +1,19 @@
-<header class="card-header" >
-  <div class="navbar">
-    <a routerLink="candidat/userDashbord" routerLinkActive="active-title"> <img alt="" src="../assets/image/logo_uvs.png"></a>
-    <ul>
-      <li><a routerLink="/candidat/compte" routerLinkActive="active-title">Mon compte</a></li>
-      <li><a routerLink="/candidat/candidature" routerLinkActive="active-title">Mes candidatures</a></li>
-      <li><a routerLink="/candidat/notifications" routerLinkActive="active-title">Notifications</a></li>
-    </ul>
-      <a  class="btn" routerLink="/public/home">Déconnexion</a>
+<header>
+  <div class="container-fluid bg-light fixed-top">
+      <nav class="nav navbar-light">
+          <div class="logo-container">
+              <a class="navbar-brand" routerLink="/candidat/userDashbord">
+                  <img src="../assets/image/logo_uvs.png" alt="Logo UVS">
+              </a>
+          </div>
+          <div class="nav-links">
+              <a class="nav-link" routerLink="/candidat/compte" routerLinkActive="active-title">Mon compte</a>
+              <a class="nav-link" routerLink="/candidat/candidature" routerLinkActive="active-title">Ma candidatures</a>
+              <a class="nav-link" routerLink="/candidat/notifications" routerLinkActive="active-title">Mes notifications</a>
+          </div>
+          <div class="logout-container">
+              <button class="btn btn-outline-success deconnexion" type="button">Déconnexion</button>
+          </div>
+      </nav> 
   </div>
 </header>

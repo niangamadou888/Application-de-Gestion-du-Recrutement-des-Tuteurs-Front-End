@@ -1,130 +1,106 @@
-*{
-  font-family: sans-serif;
+/* 🌟 RESET */
+* {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
 }
 
-.card-header{
-  background-color: #faf8f8;
-  border-bottom:solid 1px #010101;
+/* 🌟 HEADER */
+.card-header {
+  background-color: #fff;
+  border-bottom: 2px solid #026FB6;
+  position: fixed;
+  width: 100%;
   top: 0;
-}
-.navbar{
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-right: 20px;
-}
-a{
-  color: #010101;
-  margin: 0 30px;
-}
-a:hover{
-  border-bottom: green solid 2px;
-  border-top: green solid 2px;
-  color: orangered;
-}
-.active{
-  border-bottom: orangered solid 2px;
-  border-top: orangered solid 2px;
-  color: green;
-}
-header img{
-  height:30px;
-  width:30px ;
-  margin-left: 10px;
-}
-header{
-  position:fixed;
-  width: 100%;
+  z-index: 1000;
+  padding: 10px 0;
 }
 
-.card-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
+/* 🌟 CONTAINER PRINCIPAL */
+.compte-container {
   display: flex;
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 40px;
-  text-decoration: none;
-}
-
-form{
-  max-width: 80%;
-  margin: 150px 100px;
-  border-top: orangered solid 2px;
-  border-left: orangered solid 2px;
-  border-right: orangered solid 2px;
-  border-bottom:  orangered solid 4px;
-  border-radius: 6px;
-  height: 600px;
-}
-.compte{
-  max-width: 100%;
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
-}
-.input-group {
-  margin-bottom: 5px;
+  min-height: 80vh;
+  padding-top: 80px;
+  background-color: #f8f9fa;
 }
 
-.input-group label {
+/* 🌟 CARTE PROFIL */
+.compte-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 🌟 TITRE */
+h2 {
+  color: #026FB6;
+  font-size: 24px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #026FB6;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* 🌟 CONTENU DU PROFIL */
+.compte-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.photo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #026FB6;
+}
+
+/* 🌟 INFORMATIONS UTILISATEUR */
+.info {
+  text-align: left;
+}
+
+.info p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.info strong {
+  color: #026FB6;
+}
+
+/* 🌟 BOUTONS */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
   display: block;
-  margin-bottom: 5px;
-}
-
-.input-group input,
-.input-group select,
-.input-group textarea {
   width: 100%;
   padding: 10px;
-  border: 1px solid #026FB6;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-form a{
-  height: 35px;
-  background-color: green;
+  background: #026FB6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
   border-radius: 6px;
-  color: aliceblue;
-  width: 40%;
-  border-color: #026FB6;
-  margin-left: 30%;
+  transition: 0.3s ease-in-out;
 }
-form .btn{
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-form .btn:hover{
-  background-color: #026FB6;
-}
-.input-group textarea {
-  height: 120px;
-}
-.photo img{
-  height: 260px;
-  width: 250px;
-  padding-top: 10%;
-  margin-left: 5%;
-  border-radius: 50%;
-}
-.compte .input{
-  max-width: 100%;
-  width: 60%;
-}
-h1{
-  color: #026FB6;
-  border-bottom: 1px solid orangered;
+
+.btn:hover {
+  background: #024c84;
 }

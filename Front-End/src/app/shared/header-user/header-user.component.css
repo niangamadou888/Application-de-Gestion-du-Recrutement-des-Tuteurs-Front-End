@@ -1,58 +1,50 @@
-*{
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-}
-
-.card-header{
-  background-color: #faf8f8;
-  border-bottom:solid 1px #010101;
-  top: 0;
-}
-.navbar{
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alignement */
   height: 70px;
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  padding-right: 20px;
-}
-.btn{
-  border: 1px solid green;
-  color: green;
-}
-.btn:hover{
-  color: rgb(2, 74, 2);
-  background-color: green;
-  color: aliceblue;
-
-}
-a{
-  color: #010101;
-  margin: 0 30px;
-}
-a:hover{
-  border-bottom: green solid 2px;
-  border-top: green solid 2px;
-  color: orangered;
-}
-header img{
-  height:30%;
-  width:30px ;
-  margin-left: 10px;
+  padding: 0 20px; /* Ajoute de l'espace sur les côtés */
 }
 
-.card-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
+.logo-container {
   display: flex;
+  align-items: center;
+  margin-right: 2%;
 }
 
-nav li {
-  display: inline-block;
-  margin-left: 40px;
-  text-decoration: none;
+.logo-container img {
+  height: 50px; /* Augmente la taille du logo */
+  width: auto;
+  
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px; /* Espacement entre les liens */
+  color: #0477BF ;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-link{
+  border-radius: 30px;
+}
+
+.logout-container {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /*bouton est bien aligné */
+}
+
+.deconnexion {
+  height: 40px; /* Ajuste la hauteur du bouton */
+  display: flex;
+  align-items: center;
+  padding: 5px 15px;
+}
+.active-title {
+  border-bottom: 3px solid #df8020; /* Bordure bleue plus visible */
+  font-weight: bold;
+  transition: border-bottom 0.3s ease-in-out;
 }

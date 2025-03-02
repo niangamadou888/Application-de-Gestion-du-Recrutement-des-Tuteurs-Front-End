@@ -90,9 +90,9 @@ table {
     cursor: pointer;
 }
 
-.btn-info { background-color: #03A63C; color: white; }
+.btn-info { background: linear-gradient(135deg, #0477BF, #03A63C); color: white; }
 .btn-warning { background-color: #0477BF; color: white; }
 .btn-danger { background-color: #BF0404; color: white; }
 .searchButton{
-  background: #0477BF;
+  background:linear-gradient(135deg, #0477BF, #03A63C);
 }

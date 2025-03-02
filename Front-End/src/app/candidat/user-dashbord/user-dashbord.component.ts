@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router, RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { AnnonceService } from '../../core/_services/annonce.service';
 import { CommonModule } from '@angular/common';
-import { HeaderUserComponent } from '../../shared/header-user/header-user.component';
 
 @Component({
   selector: 'app-user-dashbord',
   standalone: true,
-  imports: [CommonModule, RouterModule, HeaderUserComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './user-dashbord.component.html',
   styleUrl: './user-dashbord.component.css'
 })

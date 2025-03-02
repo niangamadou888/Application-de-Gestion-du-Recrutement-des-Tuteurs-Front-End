@@ -23,6 +23,9 @@
     display: flex;
     gap: 40px; /* Espacement entre les liens */
     color: #0477BF  ;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .nav-link{
     border-radius: 30px;

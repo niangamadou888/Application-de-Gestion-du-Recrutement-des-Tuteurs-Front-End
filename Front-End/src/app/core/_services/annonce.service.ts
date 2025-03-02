@@ -17,4 +17,16 @@ export class AnnonceService {
     return this.http.get<any[]>(`${this.apiURL}/api/annonces`);
   }
 
+  ajouterAnnonce(annonce: any): Observable<any> {
+    return this.http.post<any>(`${this.apiURL}/api/annonces`, annonce);
+  }
+
+  modifierAnnonce(annonce: any): Observable<any> {
+    return this.http.put<any>(`${this.apiURL}/api/annonces`, annonce);
+  }
+
+  supprimerAnnonce(annonce: any): Observable<any> {
+    return this.http.delete<any>(`${this.apiURL}/api/annonces`, annonce);
+  }
+
 }

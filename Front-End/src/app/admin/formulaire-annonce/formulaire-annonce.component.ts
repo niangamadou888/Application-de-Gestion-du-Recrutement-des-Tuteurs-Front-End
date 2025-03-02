@@ -43,7 +43,10 @@ export class FormulaireAnnonceComponent implements OnInit {
     );
   }
   public gererAnnonce() {
-    this.router.navigate(['/admin/gestion-annonces']);
+    this.router.navigate(['/admin/gestion-annonces']).then(() => {
+      // Force reload of the page
+      window.location.reload();
+    });
   }
   soumettreAnnonce(): void {
     if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {

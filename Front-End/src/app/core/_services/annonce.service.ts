@@ -24,8 +24,10 @@ export class AnnonceService {
     return this.http.post<any>(`${this.apiURL}/api/annonces`, annonce, { headers });
   }
 
-  supprimerAnnonce(annonce: any): Observable<any> {
-    return this.http.delete<any>(`${this.apiURL}/api/annonces`, annonce);
+  supprimerAnnonce(id: String): Observable<any> {
+    const token = this.userAuthService.getToken();
+        const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.delete<any>(`${this.apiURL}/api/annonces/${id}`, { headers });
   }
 
 }

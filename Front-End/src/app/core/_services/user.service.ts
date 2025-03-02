@@ -56,5 +56,11 @@ RequestHeader=new HttpHeaders({
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.httpclient.get<any>(`${this.PATH_OF_API}/getUserInfo`, { headers });
   }
+
+  // Update user information (firstName, lastName, email)
+  updateUserInfo(token: string, user: any): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.httpclient.put<any>(`${this.PATH_OF_API}/updateUserInfo`, user, { headers });
+  }
     
 }

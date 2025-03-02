@@ -5,6 +5,10 @@ import { CommonModule } from '@angular/common';
 import { AnneeAcademiqueService } from '../../core/_services/annee_service/annee-academique.service';
 import { AnnonceService } from '../../core/_services/annonce.service';
 
+interface AnneeAcademique {
+  annee: string;
+}
+
 @Component({
   selector: 'app-formulaire-annonce',
   standalone: true,
@@ -15,7 +19,7 @@ import { AnnonceService } from '../../core/_services/annonce.service';
 export class FormulaireAnnonceComponent implements OnInit {
   annonce = {
     titre: '',
-    anneeAcademique: '',
+    anneeAcademique: {} as AnneeAcademique,
     description: ''
   };
   anneesAcademiques: any[] | undefined;
@@ -41,19 +45,19 @@ export class FormulaireAnnonceComponent implements OnInit {
 
   soumettreAnnonce(): void {
     if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
-      console.log(this.annonce.anneeAcademique);
-      // On s'assure que 'anneeAcademique' est un objet avant d'en extraire la propriété 'annee'
+      // Use type assertion to inform TypeScript that 'anneeAcademique' is an object of type 'AnneeAcademique'
+      const annee = (this.annonce.anneeAcademique as AnneeAcademique).annee;
+  
       const annonceToSend = {
         titre: this.annonce.titre,
-        anneeAcademique: this.annonce.anneeAcademique, // On envoie la chaîne d'année, pas l'objet complet
+        anneeAcademique: annee, // Access 'annee' explicitly
         description: this.annonce.description
       };
   
-      // Envoi de l'annonce
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
           console.log('Annonce ajoutée avec succès !', response);
-          this.annonce = { titre: '', anneeAcademique: '', description: '' }; // Réinitialiser le formulaire
+          this.annonce = { titre: '',anneeAcademique: {} as AnneeAcademique, description: '' }; // Reset the form
         },
         (error) => {
           console.log("Erreur lors de l'ajout de l'annonce :", error);
@@ -63,6 +67,7 @@ export class FormulaireAnnonceComponent implements OnInit {
       alert("Veuillez remplir tous les champs.");
     }
   }
+  
   
   
 }

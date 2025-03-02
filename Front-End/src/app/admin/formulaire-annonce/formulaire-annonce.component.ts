@@ -19,7 +19,7 @@ interface AnneeAcademique {
 export class FormulaireAnnonceComponent implements OnInit {
   annonce = {
     titre: '',
-    anneeAcademiqueId: '',  // Store only the ID of the academic year
+    anneeAcademique: '',  // Store only the ID of the academic year
     description: ''
   };
   anneesAcademiques: any[] = [];  // Array containing the list of academic years
@@ -42,10 +42,10 @@ export class FormulaireAnnonceComponent implements OnInit {
   }
 
   soumettreAnnonce(): void {
-    if (this.annonce.titre && this.annonce.anneeAcademiqueId && this.annonce.description) {
+    if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
       const annonceToSend = {
         titre: this.annonce.titre,
-        anneeAcademiqueId: this.annonce.anneeAcademiqueId,  // Send only the ID
+        anneeAcademiqueId: this.annonce.anneeAcademique,  // Send only the ID
         description: this.annonce.description
       };
 
@@ -54,7 +54,7 @@ export class FormulaireAnnonceComponent implements OnInit {
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
           console.log('Annonce ajoutée avec succès !', response);
-          this.annonce = { titre: '', anneeAcademiqueId: '', description: '' }; // Reset the form
+          this.annonce = { titre: '', anneeAcademique: '', description: '' }; // Reset the form
         },
         (error) => {
           console.log("Erreur lors de l'ajout de l'annonce :", error);

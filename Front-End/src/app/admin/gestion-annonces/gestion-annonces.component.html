@@ -1,11 +1,11 @@
 <main>
 <body>
-    <div class="container-fluid newAnnonce">
-        <a routerLink="/admin/formulaire-annonce" class="btn buttonAnnonce">Ajouter une annonce</a>
+    <div class="container-fluid newAnnonce mt-5 pt-5">
+        <button (click)="naviguerVersFormulaire()" class="btn buttonAnnonce">Ajouter une annonce</button>
+
     </div>
     <div class="container mt-5 pt-5">
             <h2>Gestion des annonces</h2>
-
 
         <table>
         <thead>
@@ -13,7 +13,6 @@
             <th>Titre</th>
             <th>Description</th>
             <th>Date</th>
-            <th>Statut</th>
             <th>Actions</th>
             </tr>
         </thead>
@@ -22,9 +21,10 @@
             <td>{{ annonce.titre }}</td>
             <td>{{ annonce.description }}</td>
             <td>{{ annonce.date }}</td>
-            <td>{{ annonce.statut }}</td>
             <td>
-                <button (click)="modifierAnnonce(annonce.id)">Modifier</button>
+                <a [routerLink]="['/admin/liste-candidats', annonce.id]" class="btn buttonModifier">
+                    Voir les candidats
+                  </a>
                 <button class="buttonSupprimer" (click)="supprimerAnnonce(annonce.id)">Supprimer</button>
             </td>
             </tr>

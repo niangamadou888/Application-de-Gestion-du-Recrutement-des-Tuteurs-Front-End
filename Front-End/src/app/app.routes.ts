@@ -59,7 +59,8 @@ export const routes: Routes = [
       { path: 'formulaire-annonce', component: FormulaireAnnonceComponent },
       { path: 'ajout-annee', component: AjoutAnneeComponent },
       { path: 'gestion-dossiers', component: GestionDossiersComponent },
-      { path: 'liste-candidats', component: ListeCandidatsComponent }
+      { path: 'liste-candidats', component: ListeCandidatsComponent },
+      { path: 'liste-candidats/:id', component: ListeCandidatsComponent }  // 🔥 Mise à jour
     ]
   },
 

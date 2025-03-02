@@ -42,7 +42,9 @@ export class FormulaireAnnonceComponent implements OnInit {
       }
     );
   }
-
+  public gererAnnonce() {
+    this.router.navigate(['/admin/gestion-annonces']);
+  }
   soumettreAnnonce(): void {
     if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
       const annonceToSend = {
@@ -56,7 +58,7 @@ export class FormulaireAnnonceComponent implements OnInit {
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
           this.annonce = { titre: '',anneeAcademique: '', description: '' };
-          this.router.navigate(['/admin/gestion-annonces']);// Reset the form
+          this.gererAnnonce();
         },
         (error) => {
           console.log("Erreur lors de l'ajout de l'annonce :", error);

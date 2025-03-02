@@ -46,6 +46,7 @@ export class FormulaireAnnonceComponent implements OnInit {
           this.annonce = { titre: '', anneeAcademique: '', description: '' }; // Réinitialiser le formulaire
         },
         (error) => {
+          console.log(this.annonce);
           console.log("Erreur lors de l'ajout de l'annonce :", error);
         }
       );

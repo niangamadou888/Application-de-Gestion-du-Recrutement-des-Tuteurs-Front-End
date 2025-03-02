@@ -13,7 +13,7 @@ table {
   
   /* Style des en-têtes du tableau */
   th {
-    background-color: #1772e8;
+    background-color: #0477BF;
     color: white;
     padding: 12px;
     text-align: left;
@@ -46,20 +46,16 @@ table {
   }
   
   .buttonSupprimer {
-    background-color: #dc3545;
-    color: white;
+    background-color: #BF0404; color: white;
   }
   
-  .buttonmodifier {
-    background-color: #df8020;
-    color: black;
+  .buttonModifier {
+    background-color: #03A63C; color: white;
+    margin-right: 20px;
   }
   
   button:hover {   
     opacity: 0.8;
-  }
-  .ajouterAnnonce{
-   border-radius: 10px;
   }
   body {
     height: 100%;
@@ -76,6 +72,7 @@ table {
 
 /* Style du bouton */
 .buttonAnnonce {
+  margin-top: 35px;
   display: inline-block;
   background: linear-gradient(135deg, #0477BF, #03A63C); /* Dégradé de couleurs du logo */
   color: white;

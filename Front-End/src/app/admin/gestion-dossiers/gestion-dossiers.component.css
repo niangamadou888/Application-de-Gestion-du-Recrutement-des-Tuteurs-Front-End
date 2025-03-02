@@ -12,7 +12,7 @@ table {
   
   /* Style des en-têtes du tableau */
   th {
-    background-color: #df8020;
+    background-color: #0477BF;
     color: white;
     padding: 12px;
     text-align: left;
@@ -49,12 +49,12 @@ table {
     opacity: 0.8;
   }
 .search-container {
-    margin: 20px auto;
+    margin: 50px auto;
     justify-content: center;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 15px;
+    margin-top: 8%;
 }
 
 .search-input {
@@ -74,7 +74,7 @@ table {
 }
 
 .btn:hover {
-    background-color: #D9731A;
+    background-color: #03A63C;
 }
 /* Ajout d'un style pour les boutons d'actions */
 .action-buttons {
@@ -85,12 +85,14 @@ table {
 
 /* Style des boutons */
 .btn {
-    padding: 5px 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 .btn-info { background-color: #03A63C; color: white; }
 .btn-warning { background-color: #0477BF; color: white; }
 .btn-danger { background-color: #BF0404; color: white; }
+.searchButton{
+  background: #0477BF;
+}

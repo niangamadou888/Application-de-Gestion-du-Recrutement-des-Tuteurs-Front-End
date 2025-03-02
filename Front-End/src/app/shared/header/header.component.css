@@ -1,7 +1,7 @@
 .nav {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Aligne tout bien */
+    justify-content: space-between; /* Alignement */
     height: 70px;
     width: 100%;
     padding: 0 20px; /* Ajoute de l'espace sur les côtés */
@@ -22,6 +22,7 @@
 .nav-links {
     display: flex;
     gap: 40px; /* Espacement entre les liens */
+    color: #0477BF  ;
 }
 .nav-link{
     border-radius: 30px;

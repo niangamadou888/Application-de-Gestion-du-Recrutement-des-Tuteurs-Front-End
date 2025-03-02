@@ -8,7 +8,7 @@ import { UserAuthService } from '../../core/_services/user-auth.service';
 @Component({
   selector: 'app-form-candidature',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule, HeaderUserComponent],
+  imports: [ReactiveFormsModule, HeaderUserComponent],
   templateUrl: './form-candidature.component.html',
   styleUrl: './form-candidature.component.css'
 })

@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-<div class="container mt-5 pt-5">
+<div class="container ">
     <div class="form-container mt-5">
         <form [formGroup]="formGroup" (ngSubmit)="ajouterAnnee()">
             <label for="annee">Année académique</label>
@@ -22,7 +11,7 @@
                 />
                 <span class="calendar-icon">📅</span>
             </div>
-            <button type="submit" [disabled]="formGroup.invalid">Ajouter</button>
+            <button type="submit" [disabled]="formGroup.invalid" class="ajout">Ajouter</button>
         </form>
     </div>
     

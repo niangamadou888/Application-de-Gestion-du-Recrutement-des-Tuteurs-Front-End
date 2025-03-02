@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {RouterLink } from '@angular/router';
+import {Router, RouterLink } from '@angular/router';
 import { AnnonceService } from '../../core/_services/annonce.service';
 
 @Component({
@@ -10,12 +10,14 @@ import { AnnonceService } from '../../core/_services/annonce.service';
   templateUrl: './gestion-annonces.component.html',
   styleUrl: './gestion-annonces.component.css'
 })
+
 export class GestionAnnoncesComponent implements OnInit {
 
   annonces : any[] = [];
 
   constructor(
-      private annonceService : AnnonceService ){}
+      private annonceService : AnnonceService,
+    private router:Router ){}
 
   ngOnInit(): void {
     // Charger les annonces au démarrage du composant
@@ -36,4 +38,13 @@ export class GestionAnnoncesComponent implements OnInit {
       });
     }
   }  
+
+  ajouterAnnonce() {
+    this.router.navigate(['/admin/formulaire-annonce']);
+  }
+
+  naviguerVersFormulaire() {
+      this.router.navigate(['admin/formulaire-annonce']);
+    }
+
 }

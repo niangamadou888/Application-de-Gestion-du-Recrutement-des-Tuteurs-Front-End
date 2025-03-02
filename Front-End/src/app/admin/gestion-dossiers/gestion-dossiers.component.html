@@ -1,13 +1,13 @@
 <body>
     <!-- Champ de recherche pour filtrer les dossiers -->
-    <div class="search-container mt-5">
+    <div class="search-container">
         <input 
             type="text" 
             [(ngModel)]="searchTerm"
             placeholder="Rechercher un dossier..." 
             class="search-input"
         />
-        <button class="btn btn-primary" (click)="searchDossier()">🔍 Rechercher</button>
+        <button class="btn searchButton" (click)="searchDossier()">🔍 Rechercher</button>
     </div>
 
     <!-- Tableau affichant la liste des dossiers -->

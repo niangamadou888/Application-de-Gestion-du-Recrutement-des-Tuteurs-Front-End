@@ -42,7 +42,12 @@ export class FormulaireAnnonceComponent implements OnInit {
       }
     );
   }
-
+  public gererAnnonce() {
+    this.router.navigate(['/admin/gestion-annonces']).then(() => {
+      // Force reload of the page
+      window.location.reload();
+    });
+  }
   soumettreAnnonce(): void {
     if (this.annonce.titre && this.annonce.anneeAcademique && this.annonce.description) {
       const annonceToSend = {
@@ -55,7 +60,8 @@ export class FormulaireAnnonceComponent implements OnInit {
 
       this.annonceService.ajouterAnnonce(annonceToSend).subscribe(
         (response) => {
-          this.router.navigate(['/admin/gestion-annonces']);// Reset the form
+          this.annonce = { titre: '',anneeAcademique: '', description: '' };
+          this.gererAnnonce();
         },
         (error) => {
           console.log("Erreur lors de l'ajout de l'annonce :", error);

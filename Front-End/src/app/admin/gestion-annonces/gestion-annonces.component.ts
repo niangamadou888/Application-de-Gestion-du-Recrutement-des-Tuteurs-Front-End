@@ -39,12 +39,11 @@ export class GestionAnnoncesComponent implements OnInit {
     }
   }  
 
-  ajouterAnnonce() {
-    this.router.navigate(['/admin/formulaire-annonce']);
+  public gererAnnonce() {
+    this.router.navigate(['/admin/formulaire-annonce']).then(() => {
+      // Force reload of the page
+      window.location.reload();
+    });
   }
-
-  naviguerVersFormulaire() {
-      this.router.navigate(['admin/formulaire-annonce']);
-    }
 
 }

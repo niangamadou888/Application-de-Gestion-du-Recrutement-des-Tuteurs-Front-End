@@ -8,9 +8,9 @@
       </div>
       
       <div class="info">
-        <p><strong>Prénom :</strong> Ousmane</p>
-        <p><strong>Nom :</strong> Cissé</p>
-        <p><strong>Email :</strong> cisséousmane...gmail.com</p>
+        <p><strong>Prénom :</strong> {{ user.userFirstName }}</p>
+        <p><strong>Nom :</strong> {{ user.userLastName }}</p>
+        <p><strong>Email :</strong> {{ user.userEmail }}</p>
       </div>
     </div>
 
@@ -19,4 +19,8 @@
       <a routerLink="/candidat/modifier-mdp" class="btn">Modifier mon mot de passe</a>
     </div>
   </div>
+
+  <!-- Show loading message -->
+  <div *ngIf="loading">Chargement des informations...</div>
+
 </section>

@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -48,6 +49,12 @@ RequestHeader=new HttpHeaders({
       }
     }
     return isMatch;
+  }
+
+  // Fetch user info from the backend
+  getUserInfo(token: string): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.httpclient.get<any>(`${this.PATH_OF_API}/getUserInfo`, { headers });
   }
     
 }

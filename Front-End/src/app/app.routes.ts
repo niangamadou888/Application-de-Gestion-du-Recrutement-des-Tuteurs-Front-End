@@ -27,6 +27,8 @@ import { authGuard } from './core/_auth/auth.guard';
 import { NotificationsComponent } from './candidat/notifications/notifications.component';
 import { ModifierProfilComponent } from './candidat/modifier-profil/modifier-profil.component';
 import { ModifierMdpComponent } from './candidat/modifier-mdp/modifier-mdp.component';
+import { SendResetPasswordFormComponent } from './public/send-reset-password-form/send-reset-password-form.component';
+import { SendResetPasswordForm2Component } from './candidat/send-reset-password-form2/send-reset-password-form2.component';
 
 export const routes: Routes = [
   // Layout Public
@@ -34,7 +36,9 @@ export const routes: Routes = [
     path: '', component: PublicLayoutComponent, children: [
       { path: '', component: HomeComponent },
       { path: 'connexion', component: ConnectionComponent },
-      { path: 'inscription', component: FormComponent }
+      { path: 'inscription', component: FormComponent },
+      { path: 'modifier-mdp/:id' , component: ModifierMdpComponent},
+      { path: 'modifier-mdp-email' , component: SendResetPasswordFormComponent}
     ]
   },
 
@@ -47,7 +51,7 @@ export const routes: Routes = [
       { path: 'compte' , component: CompteComponent},
       { path: 'notifications' , component: NotificationsComponent},
       { path: 'modifier-profil' , component: ModifierProfilComponent},
-      { path: 'modifier-mdp' , component: ModifierMdpComponent}
+      { path: 'modifier-mdp-email' , component: SendResetPasswordForm2Component}
     ]
   },
 

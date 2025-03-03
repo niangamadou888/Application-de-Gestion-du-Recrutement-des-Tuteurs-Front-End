@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserAuthService } from './user-auth.service';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +61,29 @@ RequestHeader=new HttpHeaders({
   updateUserInfo(token: string, user: any): Observable<any> {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this.httpclient.put<any>(`${this.PATH_OF_API}/updateUserInfo`, user, { headers });
+  }
+
+  sendResetEmail(userEmail: string): Observable<any> {
+    const payload = { userEmail }; // Create the body with the user email
+    return this.httpclient.post(`${this.PATH_OF_API}/forgot-password`, payload).pipe(
+      catchError((error) => {
+        console.error('Error details:', error);
+        return throwError('An error occurred during the password reset process.');
+      })
+    );
+  }
+
+  resetPassword(token: string, newPassword: string): Observable<any> {
+    const body = { newPassword };  // The payload to send with the request
+
+    // Make a POST request to reset the password
+    return this.httpclient.post<any>(`${this.PATH_OF_API}/reset-password?token=${token}`, body).pipe(
+      catchError((error) => {
+        // Handle any errors here (e.g., show an error message)
+        console.error('Error during password reset:', error);
+        return throwError('An error occurred while resetting your password. Please try again.');
+      })
+    );
   }
     
 }

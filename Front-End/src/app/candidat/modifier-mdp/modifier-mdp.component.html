@@ -1,18 +1,16 @@
 <form (ngSubmit)="onSubmit()">
   <h1>Modifier son Mot de Passe</h1>
+  
+  <!-- Error message for mismatch -->
   <p *ngIf="erreurMessage" class="error">{{ erreurMessage }}</p>
+  <!-- Success message after successful reset -->
   <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
 
   <div class="compte">
     <div class="input">
       <div class="input-group">
-        <label for="Ancien">Ancien Mot de passe</label>
-        <input type="password" id="Ancien" [(ngModel)]="ancienMdp" name="ancienMdp" required>
-      </div>
-
-      <div class="input-group">
         <label for="Nouveau">Nouveau Mot de passe</label>
-        <input type="password" id="Nouveau" [(ngModel)]="nouveauMdp" name="nouveauMdp" required>
+        <input type="password" id="Nouveau" [(ngModel)]="newPassword" name="nouveauMdp" required>
       </div>
 
       <div class="input-group">
@@ -29,4 +27,3 @@
   <button type="submit" class="btn btn-success">Changer le Mot de Passe</button><br>
   <a href="/candidat/compte" class="btn btn-danger">Annuler</a>
 </form>
-

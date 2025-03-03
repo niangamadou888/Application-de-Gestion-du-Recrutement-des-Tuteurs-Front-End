@@ -1,6 +1,10 @@
 <div class="container">
   <h1>Postulez dès maintenant !</h1>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" method="post">
+        <!-- Tous les champs du formulaire... -->
       <div class="input-group">
           <label for="nom">Nom complet:</label>
           <input type="text" id="nom" name="nom" formControlName="nom" required>
@@ -65,7 +69,13 @@
               Je certifie que les informations fournies sont exactes et complètes.
           </label>
       </div>
-      <button type="submit">Soumettre la demande</button>
+      <button type="submit" [disabled]="isLoading">
+        <div *ngIf="isLoading" class="loading-button">
+          <div class="loading-spinner"></div>
+          Envoi en cours...
+        </div>
+        <span *ngIf="!isLoading">Soumettre la demande</span>
+      </button>
   </form>
 </div>
 

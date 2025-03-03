@@ -27,15 +27,17 @@ export class SendResetPasswordFormComponent {
       return;
     }
 
-    // Call the service to send the reset request
     this.userService.sendResetEmail(this.userEmail).subscribe(
-      response => {
-        alert('Un email de réinitialisation a été envoyé.');
-        this.router.navigate(['/']); // Or wherever you want to redirect after success
+      (response: { message: string }) => {
+        alert(response.message);
+        this.router.navigate(['/']);
       },
       error => {
         console.error('Erreur lors de l\'envoi de l\'email', error);
-        alert('Une erreur est survenue. Veuillez réessayer.');
+    
+        // Check if the error response has a message and display it
+        const errorMessage = error?.message || 'Une erreur est survenue. Veuillez réessayer.';
+        alert(errorMessage);
       }
     );
   }

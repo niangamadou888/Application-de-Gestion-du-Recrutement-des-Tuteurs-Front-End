@@ -44,18 +44,23 @@ export class ModifierMdpComponent {
     this.erreurMessage = '';
 
     // Call the password reset service to send the new password to the backend
-    this.userService.resetPassword(this.token, this.newPassword).subscribe(
-      response => {
-        // Handle success (you can redirect or display a success message)
-        this.successMessage = 'Mot de passe réinitialisé avec succès.';
-        setTimeout(() => {
-          this.router.navigate(['/login']); // Redirect to login page after success
-        }, 2000);
-      },
-      error => {
-        // Handle error (e.g., token invalid, server issues, etc.)
-        this.erreurMessage = error; // Display the error message received from the service
-      }
-    );
+this.userService.resetPassword(this.token, this.newPassword ).subscribe(
+  (response: { message: string }) => {
+    // Handle success (you can redirect or display a success message)
+    this.successMessage = response.message; // Get the success message from the response
+    setTimeout(() => {
+      this.router.navigate(['/']); // Redirect to login page after success
+    }, 2000);
+  },
+  error => {
+    // Handle error (e.g., token invalid, server issues, etc.)
+    console.error('Erreur lors de la réinitialisation du mot de passe', error);
+
+    // Check if the error response has a message and display it
+    const errorMessage = error?.error?.message || 'Une erreur est survenue. Veuillez réessayer.';
+    this.erreurMessage = errorMessage; // Display the error message received from the service
+  }
+);
+
   }
 }

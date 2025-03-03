@@ -14,31 +14,26 @@ import { CommonModule } from '@angular/common';
 })
 export class FormCandidatureComponent implements OnInit {
   formGroup: FormGroup = new FormGroup({});
+  isLoading: boolean = false;
   files: { cv?: File; LettreMotivation?: File; diplome?: File } = {};
-  successMessage = '';
-  errorMessage = '';
-  isLoading = false; // Indicateur de chargement
+  successMessage: string | null = null;
+  errorMessage: string | null = null;
 
-  constructor(
-    private fb: FormBuilder,
-    private route: ActivatedRoute,
-    private formCandidatureService: FormCandidatureService,
-    private userAuthService: UserAuthService
-  ) {}
+  constructor(private fb: FormBuilder, private candidatureService: FormCandidatureService,private route: ActivatedRoute,private userAuthService: UserAuthService) { }
 
   ngOnInit(): void {
+    // Initialize the form group with validators
     this.formGroup = this.fb.group({
-      nom: ['', Validators.required],
+      nomComplet: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
-      telephone: ['', [Validators.required, Validators.pattern('^[0-9]{9,15}$')]],
-      date_naissance: ['', Validators.required],
-      adresse: ['', Validators.required],
-      niveau_etudes: ['', Validators.required],
-      domaine: ['', Validators.required],
-      experience: ['', Validators.required],
-      universite: ['', Validators.required],
-      disponibilite: ['', [Validators.required, Validators.min(2)]],
-      declaration: [false, Validators.requiredTrue]
+      telephone: ['', [Validators.required]],
+      dateNaissance: ['', [Validators.required]],
+      adresse: ['', [Validators.required]],
+      niveauEtude: ['', [Validators.required]],
+      domaineSpecialisation: ['', [Validators.required]],
+      experiencePro: ['', [Validators.required]],
+      universiteFrequente: ['', [Validators.required]],
+      nbHeureDisponible: ['', [Validators.required, Validators.min(2)]]
     });
   }
 
@@ -66,15 +61,33 @@ export class FormCandidatureComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.errorMessage = '';
-    this.successMessage = '';
-    this.isLoading = true; // Activation du chargement
-
     if (this.formGroup.invalid) {
-      this.errorMessage = 'Veuillez remplir tous les champs correctement.';
+      return; // Exit if form is invalid
+    }
+  
+    this.isLoading = true;
+    this.successMessage = null;
+    this.errorMessage = null;
+  
+    // Prepare the form data to send to the backend (using FormData)
+    const formData = new FormData();
+    
+    // Append JSON object as a string
+    formData.append('candidature', JSON.stringify(this.formGroup.value));
+
+    const userId = this.userAuthService.getUserId();
+    console.log(userId);
+    const annonceId = this.route.snapshot.params['id'];
+  
+    // Append the other fields
+    if (userId) {
+      formData.append('userId', userId); // Pass the userId
+    } else {
+      this.errorMessage = 'User ID is missing.';
       this.isLoading = false;
       return;
     }
+    formData.append('annonceId', annonceId); // Pass the annonceId
 
     if (!this.files.cv || !this.files.LettreMotivation || !this.files.diplome) {
       this.errorMessage = 'Tous les fichiers (CV, Lettre de motivation, Diplôme) sont requis.';
@@ -82,29 +95,26 @@ export class FormCandidatureComponent implements OnInit {
       return;
     }
 
-    const candidatureData = this.formGroup.value;
-    const userId = this.userAuthService.getUserId();
-    const annonceId = this.route.snapshot.params['annonceId'];
+    formData.append('cvFile', this.files.cv, this.files.cv.name);
+    formData.append('lettreFile', this.files.LettreMotivation, this.files.LettreMotivation.name);
+    formData.append('diplomeFile', this.files.diplome, this.files.diplome.name);
 
-    if (!userId || !annonceId) {
-      this.errorMessage = 'Identifiant utilisateur ou annonce manquant.';
-      this.isLoading = false;
-      return;
-    }
 
-    this.formCandidatureService.onSubmit(candidatureData, this.files, userId, annonceId).subscribe(
+    // Call the service to submit the form data
+    this.candidatureService.submitCandidature(formData).subscribe(
       (response) => {
-        this.successMessage = 'Candidature soumise avec succès !';
-        this.errorMessage = '';
-        this.formGroup.reset();
-        this.files = {};
+        console.log(formData);
         this.isLoading = false;
+        this.successMessage = 'Candidature soumise avec succès!';
+        this.formGroup.reset(); // Reset the form after successful submission
       },
       (error) => {
-        this.errorMessage = 'Une erreur s\'est produite. Veuillez réessayer.';
-        this.successMessage = '';
+        console.log(formData);
         this.isLoading = false;
+        this.errorMessage = 'Une erreur est survenue. Veuillez réessayer plus tard.';
+        console.log(error); // Log the error for debugging purposes
       }
     );
   }
+  
 }

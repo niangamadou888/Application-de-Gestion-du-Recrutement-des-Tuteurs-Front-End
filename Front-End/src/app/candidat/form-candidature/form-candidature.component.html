@@ -7,7 +7,7 @@
         <!-- Tous les champs du formulaire... -->
       <div class="input-group">
           <label for="nom">Nom complet:</label>
-          <input type="text" id="nom" name="nom" formControlName="nom" required>
+          <input type="text" id="nom" name="nomComplet" formControlName="nomComplet" required>
       </div>
       <div class="input-group">
           <label for="email">Adresse e-mail:</label>
@@ -19,7 +19,7 @@
       </div>
       <div class="input-group">
           <label for="date_naissance">Date de naissance:</label>
-          <input type="date" id="date_naissance" name="date_naissance" formControlName="date_naissance" required>
+          <input type="date" id="date_naissance" name="dateNaissance" formControlName="dateNaissance" required>
       </div>
       <div class="input-group">
           <label for="adresse">Adresse:</label>
@@ -27,7 +27,7 @@
       </div>
       <div class="input-group">
           <label for="niveau_etudes">Niveau d'études actuel:</label>
-          <select id="niveau_etudes" name="niveau_etudes" formControlName="niveau_etudes" required>
+          <select id="niveau_etudes" name="niveauEtude" formControlName="niveauEtude" required>
               <option value="licence">Licence</option>
               <option value="master">Master</option>
               <option value="autre">Autre</option>
@@ -35,37 +35,37 @@
       </div>
       <div class="input-group">
           <label for="domaine">Domaine de spécialisation:</label>
-          <input type="text" id="domaine" name="domaine" formControlName="domaine" required>
+          <input type="text" id="domaine" name="domaineSpecialisation" formControlName="domaineSpecialisation" required>
       </div>
       <div class="input-group">
           <label for="experience">Expérience professionnelle liée au domaine:</label>
-          <textarea id="experience" name="experience" formControlName="experience" required></textarea>
+          <textarea id="experience" name="experiencePro" formControlName="experiencePro" required></textarea>
       </div>
       <div class="input-group">
           <label for="universite">Université ou établissement fréquenté:</label>
-          <input type="text" id="universite" name="universite" formControlName="universite" required>
+          <input type="text" id="universite" name="universiteFrequente" formControlName="universiteFrequente" required>
       </div>
       <div class="input-group">
-          <label for="cv">CV:</label>
-          <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'cv')"  required >
-      </div>
-      <div class="input-group">
-          <label for="motivation">Lettre de motivation:</label>
-          <input type="file" id="LettreMotivation" name="LettreMotivation" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'LettreMotivation')" required>
-      </div>
-      <div class="input-group">
-          <label for="diplome">Diplôme ou attestation académique:</label>
-          <input type="file" id="diplome" name="diplome" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'diplome')"  required>
-      </div>
+        <label for="cv">CV:</label>
+        <input type="file" id="cv" name="cv" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'cv')"  required >
+    </div>
+    <div class="input-group">
+        <label for="motivation">Lettre de motivation:</label>
+        <input type="file" id="LettreMotivation" name="LettreMotivation" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'LettreMotivation')" required>
+    </div>
+    <div class="input-group">
+        <label for="diplome">Diplôme ou attestation académique:</label>
+        <input type="file" id="diplome" name="diplome" accept=".pdf, .doc, .docx" (change)="onFileSelected($event, 'diplome')"  required>
+    </div>
       <div class="input-group">
           <label for="disponibilite">Votre disponibilité hebdomadaire pour le tutorat (en heures):</label>
-          <input type="number" min="2" id="disponibilite" name="disponibilite" formControlName="disponibilite" required>
+          <input type="number" min="2" id="disponibilite" name="nbHeureDisponible" formControlName="nbHeureDisponible" required>
 
       </div>
 
       <div class="input-groupe">
           <label for="declaration">
-              <input type="checkbox" id="declaration" name="declaration" formControlName="declaration" required>
+              <input type="checkbox" id="declaration" name="declaration" required>
               Je certifie que les informations fournies sont exactes et complètes.
           </label>
       </div>

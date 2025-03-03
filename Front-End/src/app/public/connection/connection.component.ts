@@ -31,6 +31,7 @@ export class ConnectionComponent {
       }
         this.userAuthService.setRoles(Response.user.role);
         this.userAuthService.setToken(Response.jwtToken);
+        this.userAuthService.setUserId(Response.user.userEmail);
 
         const role = Response.user.role[0].roleName;
         if(role === 'Admin'){

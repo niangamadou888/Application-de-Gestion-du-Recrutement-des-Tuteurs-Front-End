@@ -47,4 +47,8 @@ export class SendResetPasswordFormComponent {
     // Rediriger vers la page de connexion
     this.router.navigate(['/connexion']);
   }
+  onCancel() {
+    this.router.navigate(['/connexion']); // Redirige vers la page de connexion
+  }
+  
 }

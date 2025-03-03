@@ -36,4 +36,7 @@ export class SendResetPasswordForm2Component {
       }
     );
   }
+  onCancel() {
+    this.router.navigate(['/candidat/compte']); // Redirige vers la page de connexion
+  }
 }

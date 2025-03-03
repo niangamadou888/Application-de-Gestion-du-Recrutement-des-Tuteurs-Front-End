@@ -1,13 +1,42 @@
-footer{
-    text-align: center;
-    margin: auto;
-    position: relative;
-    width: 100%;
-    bottom: 0;
-    padding: 15px;
-    margin-top: 10%;
+/* Assurer que la page prend toute la hauteur */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
-footer p{
+
+/* Le contenu principal prend tout l’espace disponible */
+main {
+    flex: 1;
+}
+
+/* Footer FIXE en bas */
+footer {
+    background-color: #222;
+    text-align: center;
+    width: 100%;
+    padding: 20px 0;
     color: white;
-    
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-top: 3px solid #0188ff;
+    margin-top: 40px; /* Séparation avec le contenu */
+}
+
+/* Espacement entre les paragraphes */
+footer p {
+    margin: 5px 0;
+}
+
+/* Lien stylisé */
+footer a {
+    color: #0188ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #00aaff;
 }

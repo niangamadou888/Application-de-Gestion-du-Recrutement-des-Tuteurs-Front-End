@@ -12,8 +12,13 @@ import { AnnonceService } from '../../core/_services/annonce.service';
 })
 
 export class GestionAnnoncesComponent implements OnInit {
+soumettreAnnonce() {
+throw new Error('Method not implemented.');
+}
 
   annonces : any[] = [];
+annonce: any;
+anneesAcademiques: any;
 
   constructor(
       private annonceService : AnnonceService,

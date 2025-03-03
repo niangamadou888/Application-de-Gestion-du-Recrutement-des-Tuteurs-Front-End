@@ -73,11 +73,18 @@ button {
 }
 
 .delete-btn {
-    background: transparent;
     border: none;
     cursor: pointer;
     font-size: 18px;
 }
 .ajout{
-    background: #03A63C;
+    background:linear-gradient(135deg, #0477BF, #03A63C); color: white;
+    margin-right: 20px;
 }
+/* Effet au survol */
+.ajout:hover {
+    background: linear-gradient(135deg, #048ABF, #D9731A);
+    transform: scale(1.05); /* Légère animation de zoom */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
+  }
+  

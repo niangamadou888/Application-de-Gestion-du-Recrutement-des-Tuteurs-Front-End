@@ -1,141 +1,117 @@
-*{
-  font-family: sans-serif;
+/* Reset et styles globaux */
+* {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  text-decoration: none;
-  list-style: none;
+  box-sizing: border-box;
 }
 
-.card-header{
-  background-color: #faf8f8;
-  border-bottom:solid 1px #010101;
-  top: 0;
-}
-.navbar{
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-right: 20px;
-}
-a{
-  color: #010101;
-  margin: 0 30px;
-}
-li a:hover{
-  border-bottom: green solid 2px;
-  border-top: green solid 2px;
-  color: orangered;
-}
-.active{
-  border-bottom: orangered solid 2px;
-  border-top: orangered solid 2px;
-  color: green;
-}
-header{
-  position:fixed;
-  width: 100%;
-}
-header img{
-  height:30px;
-  width:30px ;
-  margin-left: 10px;
-}
-.card-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  display: flex;
+.container {
+  width: 80%;
+  margin: auto;
+  padding-top: 100px;
 }
 
-nav li {
-  display: inline-block;
-  margin-left: 40px;
-  text-decoration: none;
+/* Titre principal */
+h1 {
+  text-align: left;
+  color: #333;
+  font-size: 26px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #0188ff;
+  padding-bottom: 5px;
 }
 
-
-.annonces {
-  padding: 40px 0;
-}
-
-.annonces {
-  border: 1px solid #0188ff;
-  max-width: 100%;
-  width:70% ;
+h5 {
+  color: #666;
+  font-size: 18px;
   margin-bottom: 20px;
-  padding: 20px;
-  margin-left: 50px;
-  display: flex;
-  border-radius: 16px;
 }
-h1{
-  margin-left: 55px;
-  margin-top: 200px;
 
-}
-h5{
-  margin-left: 55px;
-  margin-bottom: 30px;
-}
-h3{
+/* Cartes des candidatures */
+.candidatures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   margin-top: 20px;
-  color: #0188ff;
-}
-.annonces img{
-  height: 305px;
-  width: 305px;
-  border-radius: 17px;
-  margin-right: 20px;
-}
-.img1 img{
-  height: 32px;
-  width: 32px;
 }
 
-.annonces .container{
+.candidature-card {
   display: flex;
-}
-.annonces .container .bouton{
-  display: flex;
-  justify-content: space-between;
-  height: 30px;
-}
-.bouton button{
-  background-color: red;
-  border-radius: 6px;
-  width: 100px;
-  color:#faf8f8;
-}
-.bouton1 button{
-  background-color: #0188ff;
-  border-radius: 6px;
-  width: 100px;
-  color:#faf8f8;
-}
-.bouton1 button:hover{
-  background-color: green;
-}
-.annonces .container .bouton1{
-  display: flex;
-  justify-content: space-between;
-  height: 30px;
-}
-.Postuler button{
   align-items: center;
-  color: aliceblue;
-  border-color: #0188ff;
-  background-color: green;
+  gap: 15px;
+  background: white;
   border-radius: 10px;
-  max-width: 100%;
-  width: 30%;
-  margin-top: 60px;
-  margin-bottom:100px ;
-  margin-left: 25%;
-  height: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.3s ease;
 }
-.Postuler button:hover{
-  background-color: #0188ff;
-  border-color: green;
+
+.candidature-card:hover {
+  transform: translateY(-5px);
+}
+
+.candidature-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.candidature-details {
+  flex: 1;
+}
+
+.candidature-details h3 {
+  color: #0188ff;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.candidature-details p {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Bouton Modifier */
+.btn-modifier {
+  background: #0188ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-modifier:hover {
+  background: green;
+}
+
+.btn-modifier:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Bouton Postuler */
+.postuler {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn-postuler {
+  background: green;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-postuler:hover {
+  background: #0188ff;
 }

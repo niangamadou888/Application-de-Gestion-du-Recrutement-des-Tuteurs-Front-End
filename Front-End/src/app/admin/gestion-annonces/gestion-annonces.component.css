@@ -50,7 +50,7 @@ table {
   }
   
   .buttonModifier {
-    background-color: #03A63C; color: white;
+    background:linear-gradient(135deg, #0477BF, #03A63C); color: white;
     margin-right: 20px;
   }
   
@@ -84,7 +84,7 @@ table {
 }
 
 /* Effet au survol */
-.buttonAnnonce:hover {
+.btn:hover {
   background: linear-gradient(135deg, #048ABF, #D9731A);
   transform: scale(1.05); /* Légère animation de zoom */
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);

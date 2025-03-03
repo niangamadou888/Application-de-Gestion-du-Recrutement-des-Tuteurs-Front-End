@@ -13,7 +13,7 @@ interface AnneeAcademique {
 @Component({
   selector: 'app-formulaire-annonce',
   standalone: true,
-  imports: [BrowserModule, FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './formulaire-annonce.component.html',
   styleUrls: ['./formulaire-annonce.component.css']
 })

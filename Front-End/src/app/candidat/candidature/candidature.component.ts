@@ -5,7 +5,7 @@ import { CandidatureService } from '../../core/_services/candidature_service/can
 @Component({
   selector: 'app-candidature',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, CommonModule],
   templateUrl: './candidature.component.html',
   styleUrl: './candidature.component.css'
 })

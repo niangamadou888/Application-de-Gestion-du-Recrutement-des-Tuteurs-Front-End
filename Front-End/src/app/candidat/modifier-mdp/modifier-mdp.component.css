@@ -1,126 +1,106 @@
-*{
-  font-family: sans-serif;
+/* 🌟 GÉNÉRAL */
+* {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   text-decoration: none;
   list-style: none;
 }
 
-.card-header{
-  background-color: #faf8f8;
-  border-bottom:solid 1px #010101;
-  top: 0;
-}
-.navbar{
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding-right: 20px;
-}
-a{
-  color: #010101;
-  margin: 0 30px;
-}
-a:hover{
-  border-bottom: green solid 2px;
-  border-top: green solid 2px;
-  color: orangered;
-}
-.active{
-  border-bottom: orangered solid 2px;
-  border-top: orangered solid 2px;
-  color: green;
-}
-header img{
-  height:30px;
-  width:30px ;
-  margin-left: 10px;
+/* 🌟 FORMULAIRE */
+form {
+  max-width: 600px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 50px auto;
+  text-align: center;
+  margin-top: 6%;
 }
 
-.card-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: right;
-  display: flex;
-}
-
-nav li {
+h1 {
+  color: #026FB6;
+  font-size: 22px;
+  border-bottom: 3px solid orangered;
   display: inline-block;
-  margin-left: 40px;
-  text-decoration: none;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
 }
-form{
-  max-width: 80%;
-  margin: 150px 100px;
-  border-top: orangered solid 2px;
-  border-left: orangered solid 2px;
-  border-right: orangered solid 2px;
-  border-bottom:  orangered solid 4px;
-  border-radius: 6px;
-  height: 600px;
-}
-.compte{
-  max-width: 100%;
-  width: 100%;
-  height: 400px;
+
+/* 🌟 CONTAINER PRINCIPAL */
+.compte {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding-left: 10%;
-  padding-right: 10%;
+  justify-content: space-between;
+  gap: 20px;
 }
+
+/* 🌟 CHAMPS DU FORMULAIRE */
+.input {
+  width: 60%;
+}
+
 .input-group {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .input-group label {
   display: block;
+  font-weight: bold;
   margin-bottom: 5px;
 }
 
-.input-group input,
-.input-group select,
-.input-group textarea {
+.input-group input {
   width: 100%;
   padding: 10px;
   border: 1px solid #026FB6;
   border-radius: 4px;
   box-sizing: border-box;
 }
-form .btn{
-  height: 35px;
-  border-radius: 6px;
-  color: aliceblue;
-  width: 40%;
-  border-color: green;
-  margin-left: 30%;
-}
 
-form .btn{
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-form .btn:hover{
-  background-color: #026FB6;
-}
-
-.input-group textarea {
+/* 🌟 PHOTO DE PROFIL */
+.photo img {
+  width: 120px;
   height: 120px;
-}
-.photo img{
-  height: 260px;
-  width: 250px;
-  padding-top: 10%;
-  margin-left: 5%;
   border-radius: 50%;
+  border: 3px solid #026FB6;
 }
-.compte .input{
-  max-width: 100%;
-  width: 60%;
+
+/* 🌟 BOUTONS */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #026FB6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
 }
-h1{
-  color: #026FB6;
-  border-bottom: 1px solid orangered;
+
+.btn:hover {
+  background: #024c84;
+}
+
+.btn-danger {
+  background: #dc3545;
+}
+
+.btn-danger:hover {
+  background: #b02a37;
+}
+.error {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
 }

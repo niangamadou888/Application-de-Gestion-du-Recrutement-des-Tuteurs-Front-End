@@ -1,9 +1,26 @@
-<div class="Notifications">
-  <h1>Notifications</h1>
-  <div class="Notes">
-    <ul>
-        <li><h4>Vous avez été selectionner en tanque tuteur en IA 👏</h4></li>
-        <li><h4>Votre candidature pour le poste de tuteur en Big Data a été rejeter !😔</h4></li>
-    </ul>
+<div class="notifications-container">
+  <h1>📩 Mes Notifications</h1>
+
+  <!-- Vérifier si des notifications sont disponibles -->
+  <div *ngIf="notifications.length > 0; else noNotifications">
+    
+    <div *ngFor="let notification of notifications" class="notification-card" [ngClass]="{'unread': !notification.lu}">
+      <div class="icon">{{ notification.icone }}</div>
+      <div class="content">
+        <h3>{{ notification.titre }}</h3>
+        <p>{{ notification.message }}</p>
+        <small>Reçu {{ notification.date }}</small>
+      </div>
+      <div class="actions">
+        <button *ngIf="!notification.lu" (click)="marquerCommeLu(notification)">✔ Marquer comme lu</button>
+        <button (click)="supprimerNotification(notification)">🗑 Supprimer</button>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Message si aucune notification -->
+  <ng-template #noNotifications>
+    <p class="no-notifications">Aucune notification disponible pour le moment.</p>
+  </ng-template>
 </div>

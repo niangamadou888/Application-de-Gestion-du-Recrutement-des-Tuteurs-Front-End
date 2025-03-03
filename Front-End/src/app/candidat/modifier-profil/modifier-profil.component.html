@@ -1,23 +1,33 @@
-<form (ngSubmit)="onSubmit()"><h1>Modifier son profil </h1>
-  <div class="compte">
-      <div class="input">
-        <div class="input-group">
+<section class="compte-container">
+  <div class="compte-card">
+    <h2>Modifier mon profil</h2>
+
+    <form (ngSubmit)="onSubmit()" class="form-container">
+      <div class="compte-content">
+        <div class="photo">
+          <img alt="Photo de profil" src="../assets/image/profil.png">
+        </div>
+
+        <div class="input-fields">
+          <div class="input-group">
             <label for="nom">Nom</label>
             <input type="text" id="lastName" [(ngModel)]="user.userLastName" name="userLastName" required>
-        </div>
-        <div class="input-group">
+          </div>
+          <div class="input-group">
             <label for="prenom">Prénom</label>
             <input type="text" id="firstName" [(ngModel)]="user.userFirstName" name="userFirstName" required>
-        </div>
-        <div class="input-group">
-            <label for="email">Email:</label>
+          </div>
+          <div class="input-group">
+            <label for="email">Email</label>
             <input type="email" id="email" [(ngModel)]="user.userEmail" name="userEmail" required>
+          </div>
         </div>
       </div>
-      <div class="photo">
-        <img alt="" src="../assets/image/profil.png">
+
+      <div class="actions">
+        <button type="submit" class="btn btn-primary">Enregistrer</button>
+        <a href="/candidat/compte" class="btn btn-danger">Annuler</a>
       </div>
-    </div>
-    <a (click)="onSubmit()"  class="btn btn-success">Enregistrer</a><br>
-    <a href="/candidat/compte" class="btn btn-danger">Annuler</a>
-</form>
+    </form>
+  </div>
+</section>

@@ -1,24 +1,32 @@
-<form ><h1>Modifier son Mot de passe </h1>
+<form (ngSubmit)="onSubmit()">
+  <h1>Modifier son Mot de Passe</h1>
+  <p *ngIf="erreurMessage" class="error">{{ erreurMessage }}</p>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+
   <div class="compte">
-      <div class="input">
-        <div class="input-group">
-            <label for="AncienMdp">Ancien Mot de passe</label>
-            <input type="text" id="Ancien" name="AncienMdp" required>
-        </div>
-        <div class="input-group">
-            <label for="NouveauMdp">Nouveau Mot de passe</label>
-            <input type="text" id="Nouveau" name="NouveauMdp" required>
-        </div>
-        <div class="input-group">
-            <label for="ConfirmerMdp">Confirmer le Mot de passe</label>
-            <input type="text" id="Confirmer" name="ConfirmerMdp" required>
-        </div>
+    <div class="input">
+      <div class="input-group">
+        <label for="Ancien">Ancien Mot de passe</label>
+        <input type="password" id="Ancien" [(ngModel)]="ancienMdp" name="ancienMdp" required>
       </div>
-      <div class="photo">
-        <img alt="" src="../assets/image/profil.png">
+
+      <div class="input-group">
+        <label for="Nouveau">Nouveau Mot de passe</label>
+        <input type="password" id="Nouveau" [(ngModel)]="nouveauMdp" name="nouveauMdp" required>
+      </div>
+
+      <div class="input-group">
+        <label for="Confirmer">Confirmer le Mot de passe</label>
+        <input type="password" id="Confirmer" [(ngModel)]="confirmerMdp" name="confirmerMdp" required>
       </div>
     </div>
-    <a href="#"  class="btn btn-success">Changer le Mot de passe</a><br>
-    <a href="#" class="btn btn-danger">Annuler</a>
+
+    <div class="photo">
+      <img src="../assets/image/profil.png" alt="Photo de profil">
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-success">Changer le Mot de Passe</button><br>
+  <a href="/candidat/compte" class="btn btn-danger">Annuler</a>
 </form>
 

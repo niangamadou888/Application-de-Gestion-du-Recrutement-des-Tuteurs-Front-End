@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CandidatureService } from '../../core/_services/candidature_service/candidature.service';
 
 @Component({
   selector: 'app-liste-candidats',
@@ -10,24 +11,31 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './liste-candidats.component.html',
   styleUrl: './liste-candidats.component.css'
 })
-export class ListeCandidatsComponent {
+export class ListeCandidatsComponent implements OnInit{
 
   searchTerm: string = ''; // ✅ Ajout de searchTerm
-  idAnnonce!: number; // ✅ ID de l’annonce
-  candidats: { id: number, nom: string, mail: string, date: string, idAnnonce: number }[] = [];
+  candidats: any[] = [];
+  annonceId : number = 0;
 
-
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+    private candidatureService : CandidatureService
+  ) {}
 
   ngOnInit(): void {
-    // Récupération de l'ID de l'annonce depuis l'URL
-    this.idAnnonce = Number(this.route.snapshot.paramMap.get('id'));
 
-    // Simuler des candidats (remplacer par un appel l'API réel)
-    this.candidats = [
-      { id: 1, nom: 'Jean Dupont', mail: 'jean@mail.com', date: '2024-02-20', idAnnonce: this.idAnnonce },
-      { id: 2, nom: 'Marie Curie', mail: 'marie@mail.com', date: '2024-02-21', idAnnonce: this.idAnnonce }
-    ];
+     this.annonceId =+this.route.snapshot.paramMap.get('annonceId')!;
+    this.loadCandidatures();
+  }
+
+  loadCandidatures(): void {
+    this.candidatureService.getCandidaturesByAnnonceId(this.annonceId).subscribe(
+      (data) => {
+        this.candidats = data;
+      },
+      (error) => {
+        console.error('Erreur lors du chargement des candidatures', error);
+      }
+    );
   }
 
   voirDossier(id: number) {
@@ -50,3 +58,7 @@ export class ListeCandidatsComponent {
       }
     }
 }
+
+
+ 
+

@@ -15,20 +15,23 @@ export class CandidatureComponent {
   candidatures: any[] = [];
 
   constructor(private candidatureService: CandidatureService,
-              private userAuthService: UserAuthService
-  ) {}
+              private userAuthService: UserAuthService) {}
 
   ngOnInit(): void {
+    this.loadCandidatures();
+  }
+  
+  loadCandidatures(): void {
     const userId = this.userAuthService.getUserId()!;
-    this.candidatureService.getCandidatures(userId).subscribe(
+    this.candidatureService.getCandidaturesByUserId(userId).subscribe(
       (data) => {
         this.candidatures = data;
+        console.log('Candidatures récupérées :', this.candidatures); // Log pour déboguer
       },
       (error) => {
-        console.error('Erreur lors de la récupération des candidatures', error);
+        console.error('Erreur lors de la récupération des candidatures :', error);
       }
     );
   }
-
 
 }

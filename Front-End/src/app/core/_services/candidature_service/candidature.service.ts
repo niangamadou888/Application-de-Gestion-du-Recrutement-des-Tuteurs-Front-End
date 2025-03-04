@@ -16,13 +16,17 @@ export class CandidatureService {
   ) { }
 
 // Récupérer toutes les candidatures d'un candidat donné
-getCandidatures(userId: string): Observable<any> {
+getCandidaturesByUserId(userId: string): Observable<any> {
   const token = this.userAuthService.getToken();
           const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
   return this.http.get(`${this.PATH_OF_API}/api/candidatures/user/${userId}`, {headers});
 }
 
 
-
+getCandidaturesByAnnonceId(annonceId: number): Observable<any[]> {
+  const token = this.userAuthService.getToken();
+  const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+  return this.http.get<any[]>(`${this.PATH_OF_API}/api/candidatures/annonce/${annonceId}`,{headers});
+}
 
 }

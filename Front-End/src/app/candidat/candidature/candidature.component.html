@@ -4,10 +4,11 @@
 
   <div class="candidatures">
     <article class="candidature-card" *ngFor="let candidature of candidatures">
-      <img [src]="candidature.image || '../assets/image/default.png'" alt="Logo entreprise">
+      <img [src]="candidature.annonce.image || '../assets/image/default.png'" alt="Logo entreprise">
       <div class="candidature-details">
-        <h3>{{ candidature.titre }}</h3>
-        <p>{{ candidature.description }}</p>
+        <h3>{{ candidature.annonce.titre }}</h3>
+        <p>{{ candidature.annonce.description }}</p>
+        <p><strong>Statut :</strong> {{ candidature.statut }}</p>
         <button 
           [disabled]="candidature.statut !== 'En cours de traitement'"
           class="btn-modifier"

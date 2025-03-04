@@ -56,4 +56,7 @@ export class ModifierProfilComponent implements OnInit{
       }
     );
   }
+  onCancel() {
+    this.router.navigate(['/candidat/compte']); // Redirige vers la page de connexion
+  }
 }

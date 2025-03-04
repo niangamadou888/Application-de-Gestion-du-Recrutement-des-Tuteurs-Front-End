@@ -11,7 +11,7 @@
 /* 🌟 HEADER */
 .card-header {
   background-color: #fff;
-  border-bottom: 2px solid #026FB6;
+  border-bottom: 2px solid #048ABF;
   position: fixed;
   width: 100%;
   top: 0;
@@ -63,7 +63,7 @@ h2 {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 3px solid #026FB6;
+  border: 3px solid #048ABF;
 }
 
 /* 🌟 INFORMATIONS UTILISATEUR */
@@ -92,7 +92,7 @@ h2 {
   display: block;
   width: 100%;
   padding: 10px;
-  background: #026FB6;
+  background: linear-gradient(135deg, #048ABF, #03A63C);
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -102,5 +102,5 @@ h2 {
 }
 
 .btn:hover {
-  background: #024c84;
+  background: #1076ff;
 }

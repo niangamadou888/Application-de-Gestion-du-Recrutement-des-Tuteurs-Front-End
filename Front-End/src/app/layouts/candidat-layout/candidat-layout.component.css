@@ -1,0 +1,17 @@
+  /* Spacer pour décaler le contenu et éviter que le header fixe ne le couvre */
+  .header-spacer {
+    height: 70px;  /* Hauteur par défaut égale à celle du header */
+  }
+  
+  @media (max-width: 991px) {
+    .header-spacer {
+      height: 100px; /* Augmente la hauteur pour tablettes */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-spacer {
+      height: 100px; /* Augmente encore la hauteur pour mobiles */
+    }
+  }
+  

@@ -1,0 +1,44 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+    padding-bottom: 80px; /* Espace réservé pour le footer */
+  }
+  
+  /* Styles du footer */
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #222;
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-top: 3px solid #0188ff;
+  }
+  /* Spacer pour décaler le contenu et éviter que le header fixe ne le couvre */
+.header-spacer {
+    height: 70px;  /* Hauteur par défaut égale à celle du header */
+  }
+  
+  @media (max-width: 991px) {
+    .header-spacer {
+      height: 100px; /* Augmente la hauteur pour tablettes */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-spacer {
+      height: 120px; /* Augmente encore la hauteur pour mobiles */
+    }
+  }
+  

@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../core/_services/user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-send-reset-password-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './send-reset-password-form.component.html',
   styleUrl: './send-reset-password-form.component.css'
 })

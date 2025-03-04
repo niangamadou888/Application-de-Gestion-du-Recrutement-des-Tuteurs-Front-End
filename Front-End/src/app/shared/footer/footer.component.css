@@ -1,42 +1,58 @@
-/* Assurer que la page prend toute la hauteur */
+/* 
+  Assurer une structure flexible pour que le footer reste en bas 
+  et s'adapte à la hauteur de la page
+*/
 html, body {
     height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
-}
-
-/* Le contenu principal prend tout l’espace disponible */
-main {
-    flex: 1;
-}
-
-/* Footer FIXE en bas */
-footer {
-    background-color: #222;
-    text-align: center;
+  }
+  
+  main {
+    flex: 1; /* Le contenu principal prend tout l'espace disponible */
+  }
+  
+  /* Styles du footer */
+  .footer {
+    background-color: #222;          /* Fond sombre */
+    color: white;                    /* Texte en blanc pour un bon contraste */
+    text-align: center;              /* Centrage du texte */
     width: 100%;
     padding: 20px 0;
-    color: white;
     font-size: 14px;
     letter-spacing: 0.5px;
-    border-top: 3px solid #0188ff;
-    margin-top: 40px; /* Séparation avec le contenu */
-}
-
-/* Espacement entre les paragraphes */
-footer p {
+    border-top: 3px solid #0188ff;    /* Ligne de séparation */
+    
+    
+  }
+  
+  /* Espacement entre les paragraphes du footer */
+  .footer p {
     margin: 5px 0;
-}
-
-/* Lien stylisé */
-footer a {
+  }
+  
+  /* Style des liens dans le footer */
+  .footer a {
     color: #0188ff;
     text-decoration: none;
     font-weight: bold;
-}
-
-footer a:hover {
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
     text-decoration: underline;
     color: #00aaff;
-}
+  }
+  
+  /* Media Query pour mobile */
+  @media (max-width: 600px) {
+    .footer {
+      font-size: 12px;
+      padding: 15px 0;
+    }
+    
+    .footer p {
+      margin: 3px 0;
+    }
+  }

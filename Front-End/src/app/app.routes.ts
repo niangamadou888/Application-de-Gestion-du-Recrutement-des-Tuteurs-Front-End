@@ -4,7 +4,7 @@ import { Routes } from '@angular/router';
 import { PublicLayoutComponent } from './layouts/public-layout/public-layout.component';
 import { CandidatLayoutComponent } from './layouts/candidat-layout/candidat-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
+import { SendResetPasswordFormComponent } from './public/send-reset-password-form/send-reset-password-form.component';
 // Pages Public (accessible à tous)
 import { HomeComponent } from './public/home/home.component';
 import { ConnectionComponent } from './public/connection/connection.component';
@@ -27,7 +27,6 @@ import { authGuard } from './core/_auth/auth.guard';
 import { NotificationsComponent } from './candidat/notifications/notifications.component';
 import { ModifierProfilComponent } from './candidat/modifier-profil/modifier-profil.component';
 import { ModifierMdpComponent } from './candidat/modifier-mdp/modifier-mdp.component';
-import { SendResetPasswordFormComponent } from './public/send-reset-password-form/send-reset-password-form.component';
 import { SendResetPasswordForm2Component } from './candidat/send-reset-password-form2/send-reset-password-form2.component';
 
 export const routes: Routes = [
@@ -37,8 +36,7 @@ export const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'connexion', component: ConnectionComponent },
       { path: 'inscription', component: FormComponent },
-      { path: 'modifier-mdp/:id' , component: ModifierMdpComponent},
-      { path: 'modifier-mdp-email' , component: SendResetPasswordFormComponent}
+      { path: 'modifier-mdp-email' , component: SendResetPasswordFormComponent},
     ]
   },
 

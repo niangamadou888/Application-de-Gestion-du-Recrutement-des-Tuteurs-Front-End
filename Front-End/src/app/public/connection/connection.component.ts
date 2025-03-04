@@ -35,7 +35,7 @@ export class ConnectionComponent {
 
         const role = Response.user.role[0].roleName;
         if(role === 'Admin'){
-          this.router.navigate(['/admin/admin-dashbord']);
+          this.router.navigate(['/admin-dashbord']);
         } else {
           this.router.navigate(['/candidat/userDashbord']);
         }

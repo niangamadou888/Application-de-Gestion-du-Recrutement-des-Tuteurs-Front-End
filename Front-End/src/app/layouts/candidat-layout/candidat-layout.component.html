@@ -1,3 +1,10 @@
- <app-header-user></app-header-user>
-<router-outlet></router-outlet> <!-- Contenu dynamique -->
-<app-footer></app-footer> <!-- Footer réutilisable -->
+<body>
+    <app-header-user></app-header-user>
+    <div class="header-spacer"></div>
+    <main>
+      <!-- Contenu principal de la page -->
+      <router-outlet></router-outlet>
+    </main>
+    <app-footer></app-footer> <!-- Footer réutilisable -->
+  </body>
+  

@@ -1,20 +1,33 @@
 <header>
-  <div class="container-fluid bg-light fixed-top">
-      <nav class="nav navbar-light">
-          <div class="logo-container">
-              <a class="navbar-brand" routerLink="/candidat/userDashbord">
-                  <img src="../assets/image/logo_uvs.png" alt="Logo UVS">
-              </a>
-          </div>
-          <div class="nav-links">
+    <div class="container-fluid bg-light fixed-top">
+      <nav class="navbar">
+        <!-- Logo à gauche -->
+        <div class="logo-container">
+          <a class="navbar-brand" routerLink="/">
+            <img src="../assets/image/logo_uvs.png" alt="Logo UVS">
+          </a>
+        </div>
+        
+        <!-- Icône hamburger, visible sur mobile -->
+        <div class="hamburger" (click)="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        
+        <!-- Liens de navigation -->
+        <div class="nav-links" [class.open]="isMenuOpen">
             <a class="nav-link" routerLink="/candidat/userDashbord" routerLinkActive="active-title">Accueil</a>
               <a class="nav-link" routerLink="/candidat/compte" routerLinkActive="active-title">Mon compte</a>
               <a class="nav-link" routerLink="/candidat/candidature" routerLinkActive="active-title">Mes candidatures</a>
               <a class="nav-link" routerLink="/candidat/notifications" routerLinkActive="active-title">Mes notifications</a>
-          </div>
-          <div class="logout-container">
-              <button class="btn btn-outline-success deconnexion" type="button">Déconnexion</button>
-          </div>
-      </nav> 
-  </div>
-</header>
+        </div>
+        
+        <!-- Bouton Déconnexion à droite -->
+        <div class="logout-container">
+          <button class="btn btn-outline-success deconnexion" type="button">Déconnexion</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  

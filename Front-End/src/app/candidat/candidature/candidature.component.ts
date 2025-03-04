@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CandidatureService } from '../../core/_services/candidature_service/candidature.service';
+import { UserAuthService } from '../../core/_services/user-auth.service';
 @Component({
   selector: 'app-candidature',
   standalone: true,
@@ -13,10 +14,13 @@ export class CandidatureComponent {
 
   candidatures: any[] = [];
 
-  constructor(private candidatureService: CandidatureService) {}
+  constructor(private candidatureService: CandidatureService,
+              private userAuthService: UserAuthService
+  ) {}
 
   ngOnInit(): void {
-    this.candidatureService.getCandidatures(1).subscribe(
+    const userId = this.userAuthService.getUserId()!;
+    this.candidatureService.getCandidatures(userId).subscribe(
       (data) => {
         this.candidatures = data;
       },

@@ -16,8 +16,8 @@ export class CandidatureService {
   ) { }
 
 // Récupérer toutes les candidatures d'un candidat donné
-getCandidatures(userId: string): Observable<any> {
-  return this.http.get<any[]>(`${this.PATH_OF_API}/api/candidatures/${userId}`);
+getCandidatures(Id: number): Observable<any> {
+  return this.http.get<any[]>(`${this.PATH_OF_API}/api/candidatures/${Id}`);
 }
 
 }

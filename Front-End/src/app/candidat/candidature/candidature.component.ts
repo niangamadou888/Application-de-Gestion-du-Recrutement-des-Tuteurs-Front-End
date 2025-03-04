@@ -16,8 +16,7 @@ export class CandidatureComponent {
   constructor(private candidatureService: CandidatureService) {}
 
   ngOnInit(): void {
-    const userId = localStorage.getItem('userId')!;
-    this.candidatureService.getCandidatures(userId).subscribe(
+    this.candidatureService.getCandidatures(1).subscribe(
       (data) => {
         this.candidatures = data;
       },

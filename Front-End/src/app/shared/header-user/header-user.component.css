@@ -44,7 +44,8 @@
 .nav-link {
   color: #0477BF;
   border-radius: 30px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; 
+  padding: 4px ; /* Ajoute de l’espace autour du texte */
 }
 
 /* Lien actif (desktop) */

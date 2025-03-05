@@ -18,7 +18,7 @@
     justify-content: space-between;
     height: 70px;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 25px;
   }
   
   /* Logo */
@@ -38,6 +38,7 @@
     gap: 40px;
     flex-grow: 1;
     justify-content: center;
+    
   }
   
   /* Style des liens */
@@ -45,6 +46,7 @@
     color: #0477BF;
     border-radius: 30px;
     transition: all 0.3s ease;
+    padding: 4px ; /* Ajoute de l’espace autour du texte */
   }
   
   /* Lien actif (desktop) */
